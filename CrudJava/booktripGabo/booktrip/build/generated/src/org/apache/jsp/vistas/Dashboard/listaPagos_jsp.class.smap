@@ -1,0 +1,10 @@
+SMAP
+listaPagos_jsp.java
+JSP
+*S JSP
+*F
++ 0 listaPagos.jsp
+vistas/Dashboard/listaPagos.jsp
+*L
+1,171:44
+*E

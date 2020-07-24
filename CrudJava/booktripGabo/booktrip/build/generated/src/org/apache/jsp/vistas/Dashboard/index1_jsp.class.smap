@@ -1,0 +1,28 @@
+SMAP
+index1_jsp.java
+JSP
+*S JSP
+*F
++ 0 header.jsp
+vistas/Dashboard/header.jsp
++ 1 index1.jsp
+vistas/Dashboard/index1.jsp
++ 2 sidebar.jsp
+vistas/Dashboard/sidebar.jsp
++ 3 content.jsp
+vistas/Dashboard/content.jsp
++ 4 realContent.jsp
+vistas/Dashboard/realContent.jsp
++ 5 footer.jsp
+vistas/Dashboard/footer.jsp
+*L
+1,27:53
+1#1:80
+1#2,120:81
+2#1:201
+1#3,180:202
+3#1:382
+1#4,31:383
+4#1:414
+1#5,63:415
+*E
