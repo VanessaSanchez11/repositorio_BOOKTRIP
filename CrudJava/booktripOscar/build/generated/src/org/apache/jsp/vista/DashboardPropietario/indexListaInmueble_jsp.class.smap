@@ -1,0 +1,28 @@
+SMAP
+indexListaInmueble_jsp.java
+JSP
+*S JSP
+*F
++ 0 header.jsp
+vista/DashboardPropietario/header.jsp
++ 1 indexListaInmueble.jsp
+vista/DashboardPropietario/indexListaInmueble.jsp
++ 2 sidebar.jsp
+vista/DashboardPropietario/sidebar.jsp
++ 3 content.jsp
+vista/DashboardPropietario/content.jsp
++ 4 registro_inmueble.jsp
+vista/DashboardPropietario/registro_inmueble.jsp
++ 5 footer.jsp
+vista/DashboardPropietario/footer.jsp
+*L
+1,29:53
+1#1:82
+1#2,120:83
+2#1:203
+1#3,180:204
+3#1:384
+5#4,108:385
+4#1:492
+1#5,63:493
+*E

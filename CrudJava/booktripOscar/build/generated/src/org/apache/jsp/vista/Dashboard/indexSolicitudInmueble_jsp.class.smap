@@ -1,0 +1,29 @@
+SMAP
+indexSolicitudInmueble_jsp.java
+JSP
+*S JSP
+*F
++ 0 header.jsp
+vista/Dashboard/header.jsp
++ 1 indexSolicitudInmueble.jsp
+vista/Dashboard/indexSolicitudInmueble.jsp
++ 2 sidebar.jsp
+vista/Dashboard/sidebar.jsp
++ 3 content.jsp
+vista/Dashboard/content.jsp
++ 4 listadoSolicitudInmueble.jsp
+vista/Dashboard/listadoSolicitudInmueble.jsp
++ 5 footer.jsp
+vista/Dashboard/footer.jsp
+*L
+1,30:53
+1#1:83
+1#2,120:84
+2#1:204
+1#3,180:205
+3#1:385
+1#4,82:386
+4#1:467
+1#5,63:468
+5#1:531
+*E
