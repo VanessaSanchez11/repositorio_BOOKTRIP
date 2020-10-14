@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    
+    
+     <!-- sevlet de municipios  -->
+    
+    <servlet>
+        <servlet-name>registrarMuni</servlet-name>
+        <servlet-class>servlet.registrarMuni</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registrarMuni</servlet-name>
+        <url-pattern>/registrarMuni</url-pattern>
+    </servlet-mapping>
+    
+     <!-- sevlet de Departamentos  -->
+    
+    <servlet>
+        <servlet-name>registerDepa</servlet-name>
+        <servlet-class>servlet.registerDepa</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registerDepa</servlet-name>
+        <url-pattern>/registerDepa</url-pattern>
+    </servlet-mapping>
+   
+    <!-- sevlet de Galerias  -->
+  
+    <servlet>
+        <servlet-name>registarGalerias</servlet-name>
+        <servlet-class>servlet.registarGalerias</servlet-class>
+    </servlet>
+   
+    <servlet-mapping>
+        <servlet-name>registarGalerias</servlet-name>
+        <url-pattern>/registarGalerias</url-pattern>
+    </servlet-mapping>
+    
+     <!-- sevlet de Actividades  -->
+    
+     <servlet>
+        <servlet-name>registrarActi</servlet-name>
+        <servlet-class>servlet.registrarActi</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registrarActi</servlet-name>
+        <url-pattern>/registrarActi</url-pattern>
+    </servlet-mapping>
+   
+    
+    
+    
+    
+ 
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

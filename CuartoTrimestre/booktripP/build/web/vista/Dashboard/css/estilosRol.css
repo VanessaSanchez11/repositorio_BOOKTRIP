@@ -1,0 +1,47 @@
+* {}
+
+.tituloRol {
+    color: #3b3b3b;
+    margin: 10px 0;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+.formu {
+    margin: 40px 0;
+}
+
+.botonRegistro {
+    margin: 15px 0;
+}
+
+.btnListaRol {
+    margin: 0px 20px 0px 0px;
+}
+
+//------------Estilos del form municipios
+
+.form-group small {
+    color: #e74c3c;
+    /*visibility: hidden;*/
+}
+
+.form-group p {
+    color: #e74c3c;
+    visibility: hidden;
+   
+}
+
+.form-group.error p {
+    visibility: visible;
+    font-size: 12px;
+   
+}
+.form-control.error input {
+    border-color: #e74c3c;
+}
+.form-group.success input {
+    border-color: #2ecc71;
+}
+.label-titulo{
+    font-size: 17px;
+}
