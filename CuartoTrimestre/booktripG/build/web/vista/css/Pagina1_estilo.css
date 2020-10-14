@@ -1,0 +1,72 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11/06/2020, 01:12:06 PM
+    Author     : Giovanny
+*/
+
+*{
+	margin:0; 
+	padding:0;
+	box-sizing: border-box;
+}
+body{
+	font-family: arial, sans-serif;
+	font-size: 16px;
+	background: #0c0c3d;
+}
+.contenedor{
+	width: 1000px;
+	margin: 20px auto;
+	overflow: hidden;
+}
+header{
+	background: #ffffff;
+}
+header nav{
+	width: 100%;
+}
+
+header nav ul{
+	width: 200%; /*que abarque el 100%*/
+	overflow: hidden; /*si recortar contenido, dibujar barras de desplazamiento*/
+	list-style: none;
+}
+header nav ul li{
+	float:left; /*para que los elementeos se pongan uno al lado*/
+}
+
+header nav ul li a{
+	text-decoration: none;
+	display: inline-block;
+	padding: 15px 20px;
+	color: #000;
+}
+
+header nav ul li a:hover{
+	background: #000;
+	color: #fff;
+}
+
+.main{
+	width: 1000px;
+	background: #fff;
+	float: left;
+}
+
+.main .Posts article h2{
+	margin: 20px;
+	color: #424242;
+}
+
+footer{
+	width: 1349px;
+	clear: both; /*pone una nueva linea */
+	background: black;
+	color: #fff;
+	padding: 15px 0;
+	text-align: center;
+}
