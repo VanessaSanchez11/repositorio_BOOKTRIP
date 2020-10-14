@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url('../imagenes/fondoU.jfif');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    margin: 35px 0;
+    color: #4fccccf1;
+}
+
+.formulario {
+    width: 100%;
+    margin: 35px 0;
+}
+
+.formulario form {
+    width: 50%;
+    margin: 1px auto;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.formulario form .boton {
+    margin: 15px 270px;
+    width: 15%;
+}
+
+h1 {
+    font-family: Arial;
+    text-align: center;
+}

@@ -1,0 +1,17 @@
+h1{
+    text-align: center;
+    font-family: initial;
+    color:#2e279d;
+
+}
+.btn btn-primary btn-sm botonRegistro mb-4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.titulo{
+    text-align: center;
+    font-family: inherit;
+    color: black;
+    
+}
