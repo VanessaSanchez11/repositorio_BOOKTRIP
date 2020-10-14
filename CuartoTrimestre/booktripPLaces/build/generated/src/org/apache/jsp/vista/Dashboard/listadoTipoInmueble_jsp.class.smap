@@ -1,0 +1,20 @@
+SMAP
+listadoTipoInmueble_jsp.java
+JSP
+*S JSP
+*F
++ 0 listadoTipoInmueble.jsp
+vista/Dashboard/listadoTipoInmueble.jsp
+*L
+5,16:48
+21:64,3
+22:67
+22,5:68
+26,70:73
+96:143,3
+97,29:146
+126:175,3
+127,8:178
+135,18:187
+152,21:205
+*E
