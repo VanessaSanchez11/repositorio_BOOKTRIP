@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #f8f8f8;
+}
+
+header img {
+    width: 30%;
+    border-radius: 50%;
+    margin: 10px 70px;
+}
+
+.txt-title {
+    font-size: 50px;
+    letter-spacing: 15px;
+}
+
+section.banner {
+    background-image: url("../img/1.png");
+    /* background-attachment: fixed; */
+    background-size: 100vw 55vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height: 270px;
+}
+
+.banner .contenedorTexto {
+    font-family: arial;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner .contenedorTexto h2 {
+    font-weight: 100;
+    letter-spacing: 15px;
+    font-size: 50px;
+    color: #ad9614;
+}
+
+.banner .contenedorTexto .btn {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.banner .contenedorTexto .btn a {
+    background: #2C3A95;
+    color: #fff;
+    text-decoration: none;
+    font-family: arial;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    width: 50%;
+    margin: 0 4px;
+}
+
+
+/* -----------------------------ACTIVIDADES-------------------- */
+
+.actividades {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.actividades .card {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.actividades .card .card-img-top {
+    width: 100%;
+    height: 50%;
+}
+
+footer {
+    background: #2C3A95;
+    padding: 15px;
+}
+
+footer p {
+    font-style: italic;
+    font-weight: 100;
+    letter-spacing: 15px;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+}
+
+
+/* -------------- */
+
+@media only screen and (max-width: 650px) {
+    .actividades .card {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .actividades .card {
+        width: 45%;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .actividades .card {
+        width: 45%;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .actividades .card {
+        width: 45%;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .actividades .card {
+        width: 45%;
+        margin-bottom: 40px;
+    }
+}

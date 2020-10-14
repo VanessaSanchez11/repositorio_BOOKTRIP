@@ -1,0 +1,61 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+        
+}
+/*
+etiqueta general
+*/
+body{
+    
+    background:url("../imagenes/fondo.jpg");
+    background-repeat: no-repeat;
+   
+}
+/*
+imagen de fonto
+*/
+.formulario h1{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+/*
+titulo SOLICITA TU INMUEBLE
+*/
+
+.formulario{
+    widows: 400px;
+    background: #dff6f0;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 3px;
+    font-family: 'arial';
+    color: #ffffff;
+    
+}
+/*
+etiquetas del formulario
+*/
+
+.boton{
+     
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+  }
+  .boton:hover{
+      color: #1883ba;
+    background-color: #ffffff;
+  }
+  /*
+etiqueta del boton "solicitar"
+*/
+  
