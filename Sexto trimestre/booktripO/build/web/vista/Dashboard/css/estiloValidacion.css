@@ -1,0 +1,20 @@
+form.bts-sm{
+    border-radius: 10rem;
+    padding: 0,75rem 1rem;
+}
+
+form-group p{
+    
+    color:#e02dlb;
+    visibility: hidden;
+    padding: 20px;
+    
+}
+
+.form-group.error p{
+    
+    visibility: visible;
+    margin-left: 20px;
+    padding: 30px;
+}
+
