@@ -1,0 +1,89 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11/06/2020, 03:46:41 PM
+    Author     : 57321
+*/
+*{
+    background-color:#99ffcc;
+    }
+
+#intro{
+    font-size: 50px;
+    font-family: cursive;
+    
+    
+}
+#parrafo{
+    font-size: 30px;
+    font-family: initial;
+    color: #330033;
+    margin: 2px;
+    text-align: justify;
+    
+}
+#pat1{
+  
+    font-family:inherit;
+    
+}
+#lista3 {
+    counter-reset: li; 
+    list-style: none; 
+    *list-style: decimal; 
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+#lista3 ol {
+    margin: 0 0 0 2em; 
+}
+
+#lista3 li{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    *padding: .4em;
+    margin: .5em 0 .5em 2.5em;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    transition: all .3s ease-out;   
+}
+#lista3 li:hover{
+    background: #eee;
+}   
+
+#lista3 li:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute; 
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: #fa8072;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+
+#lista3 li:after{
+    position: absolute; 
+    content: '';
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    transition: all .3s ease-out;               
+}
+
+#lista3 li:hover:after{
+    left: -.5em;
+    border-left-color: #fa8072;             
+}

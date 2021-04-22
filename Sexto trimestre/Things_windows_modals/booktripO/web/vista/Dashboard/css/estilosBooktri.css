@@ -1,0 +1,33 @@
+
+//estados
+
+.principal {
+    position: relative;
+    background: url(../imagenes/paisaje2.jpg);
+    background-size: cover;
+   height: 100%;
+}
+
+.fondo {
+    background: rgba(0, 0, 255, .3);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+h3{
+    color: blue;
+}
+
+
+/*.buscar {
+ display: flex;
+ 
+}
+
+.form {
+ display: flex;
+ padding-left: 400px;
+}*/
+//others
+

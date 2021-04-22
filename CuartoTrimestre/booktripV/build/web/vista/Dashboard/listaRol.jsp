@@ -2,7 +2,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="controlador.rolDAO"%>
 
-<body onload="visualizaOcultaRol('<%=request.getParameter("Vista")%>');">
+<body   >
     <% String buscando = request.getParameter("buscando");
         if (buscando == null) {
             buscando = "";

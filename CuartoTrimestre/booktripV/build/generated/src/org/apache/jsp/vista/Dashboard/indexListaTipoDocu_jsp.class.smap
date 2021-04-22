@@ -1,0 +1,40 @@
+SMAP
+indexListaTipoDocu_jsp.java
+JSP
+*S JSP
+*F
++ 0 indexListaTipoDocu.jsp
+vista/Dashboard/indexListaTipoDocu.jsp
++ 1 header.jsp
+vista/Dashboard/header.jsp
++ 2 sidebar.jsp
+vista/Dashboard/sidebar.jsp
++ 3 content.jsp
+vista/Dashboard/content.jsp
++ 4 listaTipoDocu.jsp
+vista/Dashboard/listaTipoDocu.jsp
++ 5 footer.jsp
+vista/Dashboard/footer.jsp
+*L
+1,3:56
+1#1,27:58
+3#0:85,2
+1#2,120:87
+4#0:207,2
+1#3,180:209
+5#0:389,2
+1#4,5:391
+6:396,3
+7:399
+7,5:400
+11,31:405
+42,2:436,3
+44,17:442
+61:459,3
+62,11:462
+73,16:474
+88,14:490
+6#0:504,2
+1#5,63:506
+7#0,3:569
+*E
