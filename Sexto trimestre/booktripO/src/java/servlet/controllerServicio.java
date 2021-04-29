@@ -5,40 +5,41 @@
  */
 package servlet;
 
+import controlador.estadosDAO;
 import controlador.serviciosDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import modelo.estados;
 import modelo.servicios;
 
 /**
  *
- * @author gabob
+ * @author oscar sanabria
  */
 @WebServlet(name = "controllerServicio", urlPatterns = {"/controllerServicio"})
 public class controllerServicio extends HttpServlet {
-servicios p=new servicios();
+
+   servicios p=new servicios();
     serviciosDAO dao=new serviciosDAO();
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       String accion=request.getParameter("accion");
-        switch (accion) {
-            case "Listar":
+        try (PrintWriter out = response.getWriter()) {
+
+            String accion = request.getParameter("accion");
+ 
+            switch (accion) {
+
+                case "Listar":
                 List<servicios>lista=dao.listar();
                 request.setAttribute("lista", lista);
                 request.getRequestDispatcher("vista/Propietario/listaServicio.jsp").forward(request, response);
@@ -78,9 +79,14 @@ servicios p=new servicios();
                 request.getRequestDispatcher("controllerServicio?accion=Listar").forward(request, response);
                 break;
             default:
-                request.getRequestDispatcher("controllerServicio?accion=Listar").forward(request, response);;
+                out.println("<script type=\"text/javascript\">");
+                out.println("window.location.href='/booktripO/vista/Dashboard/indexListaEstado.jsp';");
+                out.println("</script>");
+                   
+            }
         }
     }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -108,6 +114,7 @@ servicios p=new servicios();
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+
     }
 
     /**

@@ -62,7 +62,7 @@ public class controllerEstado extends HttpServlet {
                     estados res = dao.listarId(ide);
                     request.setAttribute("dato", res);
                     out.println("<script type=\"text/javascript\">");
-                out.println("window.location.href='/booktripO/vista/Propietario/editInmueble.jsp';");
+                out.println("window.location.href='/booktripO/vista/Dashboard/editEstado.jsp';");
                 out.println("</script>");
                     break;
                 case "Actualizar":

@@ -52,9 +52,9 @@
          <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
                  <h6 class="collapse-header">Opciones</h6>
-                 <a class="collapse-item" href="index1.jsp">Lista de inmuebles</a>
-                 <a class="collapse-item" href="indexTipoInmueble.jsp">Tipos de inmuebles</a>
-                 <a class="collapse-item" href="indexListaEstado.jsp">Estados</a>
+                 <a class="collapse-item" href="../Propietario/indexListaInmueble.jsp">Lista de inmuebles</a>
+                 <a class="collapse-item" href="../Dashboard/indexListaTipoInmueble.jsp">Tipos de inmuebles</a>
+                 <a class="collapse-item" href="../Dashboard/indexListaEstado.jsp">Estados</a>
                 
              </div>
          </div>
@@ -68,9 +68,9 @@
          <div id="collapseLugares" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
                  <h6 class="collapse-header">Opciones</h6>
-                 <a class="collapse-item" href="indexDepartamentos.jsp">Departamentos</a>
-                 <a class="collapse-item" href="indexMunicipios.jsp">Municipios</a>
-                 <a class="collapse-item" href="indexActividad.jsp">Actividades</a>
+                 <a class="collapse-item" href="../Dashboard/indexListaDepartamento.jsp">Departamentos</a>
+                 <a class="collapse-item" href="../Dashboard/indexListaMunicipio.jsp">Municipios</a>
+                 <a class="collapse-item" href="../Propietario/indexListaActividad.jsp">Actividades</a>
              </div>
          </div>
      </li>
@@ -82,8 +82,8 @@
          <div id="collapseReserva" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
                  <h6 class="collapse-header">Opciones</h6>
-                 <a class="collapse-item" href="indexListaReserva.jsp">Lista de reservas</a>
-                 <a class="collapse-item" href="indexListaPagos.jsp">Pagos</a>
+                 <a class="collapse-item" href="../Viajero/indexListaReserva.jsp">Lista de reservas</a>
+                 <a class="collapse-item" href="../Viajero/indexListaPago.jsp">Pagos</a>
                  
 
              </div>
@@ -97,9 +97,9 @@
          <div id="collapseInfo" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
                  <h6 class="collapse-header">Opciones</h6>
-                 <a class="collapse-item" href="indexListaServicios.jsp">Servicios</a>
-                 <a class="collapse-item" href="indexListaSolicitud.jsp">Solicitudes</a>
-                 <a class="collapse-item" href="indexListaPuntuaciones.jsp">Puntuaciones</a>
+                 <a class="collapse-item" href="../Propietario/indexListaServicio.jsp">Servicios</a>
+                 <a class="collapse-item" href="../Dashboard/indexListaSolicitud.jsp">Solicitudes</a>
+                 <a class="collapse-item" href="../Dashboard/indexListaPuntuacion.jsp">Puntuaciones</a>
                  
 
              </div>

@@ -8,6 +8,7 @@ package servlet;
 import controlador.reservasDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -88,7 +89,9 @@ public class controllerReserva extends HttpServlet {
                 request.getRequestDispatcher("controllerReserva?accion=Listar").forward(request, response);
                 break;
             default:
-                request.getRequestDispatcher("controllerReserva?accion=Listar").forward(request, response);;
+              out.println("<script type=\"text/javascript\">");
+                out.println("window.location.href='/booktripO/vista/Dashboard/indexListaEstado.jsp';");
+           out.println("</script>");
         }
     }
 
