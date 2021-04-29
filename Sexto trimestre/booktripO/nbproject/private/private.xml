@@ -12,8 +12,10 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/oscar%20sanabria/Documents/GitHub/repositorio_BOOKTRIP/Sexto%20trimestre/BooktripO/booktripO/web/vista/Propietario/listaInmueble.jsp</file>
-            <file>file:/C:/Users/oscar%20sanabria/Documents/GitHub/repositorio_BOOKTRIP/Sexto%20trimestre/BooktripO/booktripO/web/vista/Dashboard/indexListaSolicitud.jsp</file>
+            <file>file:/C:/Users/oscar%20sanabria/Documents/GitHub/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/src/java/servlet/controllerEstado.java</file>
+            <file>file:/C:/Users/oscar%20sanabria/Documents/GitHub/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/web/vista/login.jsp</file>
+            <file>file:/C:/Users/oscar%20sanabria/Documents/GitHub/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/web/vista/Dashboard/listaUsuario.jsp</file>
+            <file>file:/C:/Users/oscar%20sanabria/Documents/GitHub/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/web/vista/Dashboard/indexListaEstado.jsp</file>
         </group>
     </open-files>
 </project-private>

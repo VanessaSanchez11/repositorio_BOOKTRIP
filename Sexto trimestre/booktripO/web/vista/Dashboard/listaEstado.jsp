@@ -87,7 +87,7 @@ response.setDateHeader("Expires", 0); // prevents caching at the proxy server
                   method="POST" onsubmit="return validarEstado()">
                 <div col-md-6>
                     <div col-md-3><label>Nombre:</label></div>
-                    <div col-md-3><input type="text" name="txtNom" id="txtNom" required="">
+                    <div col-md-3><input type="text" name="txtNom" id="txtNom">
                     </div>
                 </div>
                 <div col-md-6>

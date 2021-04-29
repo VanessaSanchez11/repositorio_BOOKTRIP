@@ -45,15 +45,15 @@ response.setDateHeader("Expires", 0); // prevents caching at the proxy server
         <hr>
         <center>
         <div>
-        <h1>lista de estados</h1>
+        <h1>lista de solicitudes</h1>
         
 <table class="bg-light table table-bordered dataTables-example">
                         <thead>
                     <tr>
                         <th>ID</th>
-                        <th>id inmueble</th>
-                        <th>idUsuario</th>
-                         <th>idEstado</th>
+                        <th>inmueble</th>
+                        <th>Usuario</th>
+                         <th>Estado</th>
                           <th>fecha</th>
                         <th>ACCIONES</th>
                     </tr>

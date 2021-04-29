@@ -16,7 +16,7 @@
             
              <div class="container  col-md-6 mt-5 bg-light">
         <center>
-        <h3>Actualizar estado</h3>
+        <h3>Actualizar solicitud</h3>
         <hr>
         <br>
         <form action="controllerSolicitud" method="POST">
