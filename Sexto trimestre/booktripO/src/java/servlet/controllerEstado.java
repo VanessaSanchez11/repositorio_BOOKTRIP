@@ -6,6 +6,7 @@
 package servlet;
 
 import controlador.estadosDAO;
+import controlador.usuarioDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import static java.lang.System.out;
@@ -27,43 +28,45 @@ public class controllerEstado extends HttpServlet {
 
     estados p = new estados();
     estadosDAO dao = new estadosDAO();
-  
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
             String accion = request.getParameter("accion");
- 
+usuarioDao u = new usuarioDao();
+request.getAttribute("copiaU");
             switch (accion) {
 
                 case "Listar":
+                   
                     List<estados> lista = dao.listar();
                     request.setAttribute("lista", lista);
-                   out.println("<script type=\"text/javascript\">");
-                out.println("window.location.href='/booktripO/vista/Dashboard/indexListaEstado.jsp';");
-                out.println("</script>");
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("window.location.href='/booktripO/vista/Dashboard/indexListaEstado.jsp';");
+                    out.println("</script>");
+
                     break;
-             case "Nuevo": 
-                 
-                 break;
+                case "Nuevo":
+
+                    break;
                 case "Guardar":
                     String nom = request.getParameter("txtNom");
                     p.setNombre(nom);
                     dao.agregar(p);
                     out.println("<script type=\"text/javascript\">");
                     out.println("alert('" + "Se ha registrado con exito" + "');");
-                out.println("window.location.href='/booktripO/vista/Dashboard/indexListaEstado.jsp';");
-                out.println("</script>");
+                    out.println("window.location.href='/booktripO/vista/Dashboard/indexListaEstado.jsp';");
+                    out.println("</script>");
                     break;
                 case "Editar":
                     int ide = Integer.parseInt(request.getParameter("id"));
                     estados res = dao.listarId(ide);
                     request.setAttribute("dato", res);
                     out.println("<script type=\"text/javascript\">");
-                out.println("window.location.href='/booktripO/vista/Dashboard/editEstado.jsp';");
-                out.println("</script>");
+                    out.println("window.location.href='/booktripO/vista/Dashboard/editEstado.jsp';");
+                    out.println("</script>");
                     break;
                 case "Actualizar":
                     int id = Integer.parseInt(request.getParameter("id"));
@@ -74,29 +77,29 @@ public class controllerEstado extends HttpServlet {
                     HttpSession sesion = request.getSession();
                     out.println("<script type=\"text/javascript\">");
                     out.println("alert('" + "Se ha actualizado con exito" + "');");
-                out.println("window.location.href='/booktripO/vista/Dashboard/indexListaEstado.jsp';");
-                out.println("</script>");
-  
+                    out.println("window.location.href='/booktripO/vista/Dashboard/indexListaEstado.jsp';");
+                    out.println("</script>");
+
                     break;
                 case "Delete":
-                   int idd = Integer.parseInt(request.getParameter("id"));
-                   dao.delete(idd);
-                   out.println("<script type=\"text/javascript\">");
-                   out.println("alert('" + "Se ha eliminado con exito" + "');");
-                out.println("window.location.href='/booktripO/vista/Dashboard/indexListaEstado.jsp';");
-                out.println("</script>");
+                    int idd = Integer.parseInt(request.getParameter("id"));
+                    dao.delete(idd);
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('" + "Se ha eliminado con exito" + "');");
+                    out.println("window.location.href='/booktripO/vista/Dashboard/indexListaEstado.jsp';");
+                    out.println("</script>");
                     break;
                 case "Buscar":
                     String dato = request.getParameter("txtBuscar");
-                 List<estados> list = dao.buscar(dato);
+                    List<estados> list = dao.buscar(dato);
                     request.setAttribute("lista", list);
                     break;
-                    
+
                 default:
-                out.println("<script type=\"text/javascript\">");
-                out.println("window.location.href='/booktripO/vista/Dashboard/indexListaEstado.jsp';");
-                out.println("</script>");
-                   
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("window.location.href='/booktripO/vista/Dashboard/indexListaEstado.jsp';");
+                    out.println("</script>");
+
             }
         }
     }

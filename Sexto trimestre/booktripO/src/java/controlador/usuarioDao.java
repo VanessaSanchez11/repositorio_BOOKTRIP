@@ -17,13 +17,19 @@ import modelo.usuario;
 public class usuarioDao {
 
    
-public int loguear(usuario log1) throws ClassNotFoundException, SQLException {
+public int loguear(usuario log) throws ClassNotFoundException, SQLException {
+    usuario user = null;
+
+        Conexion connect = new Conexion();
+        Connection newConexion;
+        newConexion = connect.getConn();
+
         PreparedStatement pst;
         ResultSet rs;
         int cont=0;
         int nivel=0;
         
-        String sql = "select idRol usuarios  where email = '" + log1.getEmail()+ "' and password =md5 '" + log1.getPassword()+ "'";
+        String sql = "select idRol usuarios  where email = '" + log.getEmail()+ "' and password =md5 '" + log.getPassword()+ "'";
                   
             pst = con.prepareStatement(sql);
             rs = pst.executeQuery();
