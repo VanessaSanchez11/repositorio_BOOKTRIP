@@ -7,12 +7,15 @@ package modelo;
 
 public class usuario {
 
+    public usuario(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
     public usuario() {
     }
 
-    public usuario(usuario user) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
    
 

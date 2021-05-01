@@ -13,13 +13,14 @@
         <h3>Actualizar estado</h3>
         <hr>
         <br>
-        <form action="/booktripO/controllerEstado" method="POST"  onsubmit="return validar()" >
+        <form action="/booktripO/controllerEstado" method="POST" >
+           
            
             <div col-md-6>
                 <div col-md-3><label>Nombre:</label></div>
                 <div col-md-3>
                     <input type="text" name="txtNom" value="${dato.getNombre()}">
-                    <input type="hidden" name="id" value="${dato.getIdEstado()}">
+                    <input type="text" name="id" value="${dato.getIdEstado()}">
                 </div>
             </div>
    

@@ -91,7 +91,7 @@ response.setDateHeader("Expires", 0); // prevents caching at the proxy server
       out.write("                                    <div class=\"text-center\">\r\n");
       out.write("                                        <h1 class=\"h4 text-gray-900 mb-4\">Iniciar sesión</h1>\r\n");
       out.write("                                    </div>\r\n");
-      out.write("                                    <form class=\"user\" action=\"/booktripO/login\" method=\"post\">\r\n");
+      out.write("                                    <form class=\"user\" action=\"/booktripO/login2\" method=\"post\">\r\n");
       out.write("                                        <div class=\"form-group\">\r\n");
       out.write("                                            <input type=\"email\" class=\"form-control form-control-user\r\n");
       out.write("                                                   \" name=\"email\" id=\"exampleInputEmail\" aria-describedby=\"emailHelp\" placeholder=\"Email\">\r\n");
