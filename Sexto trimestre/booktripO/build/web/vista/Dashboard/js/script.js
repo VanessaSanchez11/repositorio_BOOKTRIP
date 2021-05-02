@@ -18,14 +18,13 @@ function VolverATipoInmuebles(){
 
 
 
-
 function init(){
-	var x = document.getElementById("Listado");
+    var x = document.getElementById("Listado");
     var y = document.getElementById("Registrar");
     var z = document.getElementById("Actualizar");
     x.style.display = "block";
     y.style.display = "none";
- z.style.display = "none";
+    z.style.display = "none";
 }
 
 function myFunctionB1() {
@@ -42,7 +41,6 @@ function myFunctionB1() {
     }
     
 }
-
 function myFunctionB2() {
     var x = document.getElementById("Listado");
     var y = document.getElementById("Registrar");
@@ -55,6 +53,21 @@ function myFunctionB2() {
   } else {
         x.style.display = "none";
         z.style.display = "none";  
+    }
+    
+}
+function actualizar() {
+    var x = document.getElementById("Listado");
+    var y = document.getElementById("Registrar");
+    var z = document.getElementById("Actualizar");
+    
+    if (z.style.display === "none") {
+        z.style.display = "block";
+        x.style.display = "none";
+        y.style.display = "none";
+  } else {
+        x.style.display = "none";
+        y.style.display = "none";  
     }
     
 }
