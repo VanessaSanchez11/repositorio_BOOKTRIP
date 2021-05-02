@@ -19,7 +19,7 @@ response.setDateHeader("Expires", 0); // prevents caching at the proxy server
     <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <!--<link rel="stylesheet" href="css/estilosRegister.css">-->
+    <link rel="stylesheet" href="Dashboard/usuario/css/estilosRegister.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -61,9 +61,7 @@ response.setDateHeader("Expires", 0); // prevents caching at the proxy server
 
                                     </form>
                                     <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="#">Olvidaste tu contraseña?</a>
-                                    </div>
+                                    
                                     <div class="text-center">
                                         <a class="small" href="Dashboard/usuario/add.jsp">Crea una cuenta</a>
                                     </div>

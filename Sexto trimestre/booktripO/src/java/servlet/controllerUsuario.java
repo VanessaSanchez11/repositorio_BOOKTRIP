@@ -18,7 +18,6 @@ import javax.servlet.http.HttpSession;
 import modelo.usuario;
 
 /**
- *
  * @author oscar sanabria
  */
 @WebServlet(name = "controllerUsuario", urlPatterns = {"/controllerUsuario"})
@@ -30,12 +29,12 @@ public class controllerUsuario extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        String accion = request.getParameter("accion");
+        String accion = request.getParameter("accion"); 
         switch (accion) {
             case "Listar":
                 List<usuario> lista = dao.listar();
                 request.setAttribute("lista", lista);
-                request.getRequestDispatcher("vista/Dashboard/listaUsuario.jsp").forward(request, response);
+                request.getRequestDispatcher("vista/login.jsp").forward(request, response);
                 break;
             case "Nuevo":
                 request.getRequestDispatcher("vista/Dashboard/usuario/add.jsp").forward(request, response);
@@ -47,10 +46,10 @@ public class controllerUsuario extends HttpServlet {
                 String nombre = request.getParameter("txtNombre");
                 String apellido = request.getParameter("txtApellido");
                 String direccion = request.getParameter("txtDireccion");
+                //String telefono = request.getParameter("txtTelefono");
                 int telefono = Integer.parseInt(request.getParameter("txtTelefono"));
                 String fecha = request.getParameter("txtFecha");
-                String email = request.getParameter("txtEmail");
-                
+                String email = request.getParameter("txtEmail");     
                 String password = request.getParameter("txtPassword");
 
                 p.setIdTipoDocumento(idTipo);
@@ -65,7 +64,7 @@ public class controllerUsuario extends HttpServlet {
                 p.setPassword(password);
 
                 dao.agregar(p);
- HttpSession session =request.getSession();
+                HttpSession session =request.getSession();
                 request.getRequestDispatcher("controllerUsuario?accion=Listar").forward(request, response);
                 break;
             case "Editar":
