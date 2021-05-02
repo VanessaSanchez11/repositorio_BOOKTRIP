@@ -28,16 +28,18 @@ public class controllerUsuario extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+        try (PrintWriter out = response.getWriter()) {
         String accion = request.getParameter("accion"); 
         switch (accion) {
             case "Listar":
                 List<usuario> lista = dao.listar();
                 request.setAttribute("lista", lista);
-                request.getRequestDispatcher("vista/login.jsp").forward(request, response);
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("window.location.href='/booktripO/vista/login.jsp';");
+                    out.println("</script>");
                 break;
             case "Nuevo":
-                request.getRequestDispatcher("vista/Dashboard/usuario/add.jsp").forward(request, response);
+               
                 break;
             case "Guardar":
                 int idTipo = Integer.parseInt(request.getParameter("txtTipoDocumento"));
@@ -111,7 +113,7 @@ public class controllerUsuario extends HttpServlet {
                 ;
         }
     }
-
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
