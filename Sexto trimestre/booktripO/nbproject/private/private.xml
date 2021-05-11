@@ -12,13 +12,11 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/vanessa/Documents/Netbeans%20projects%208.2/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/web/vista/Dashboard/sidebar.jsp</file>
-            <file>file:/C:/Users/vanessa/Documents/Netbeans%20projects%208.2/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/web/vista/Dashboard/indexListaRol.jsp</file>
-            <file>file:/C:/Users/vanessa/Documents/Netbeans%20projects%208.2/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/web/vista/error.jsp</file>
-            <file>file:/C:/Users/vanessa/Documents/Netbeans%20projects%208.2/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/web/vista/login.jsp</file>
-            <file>file:/C:/Users/vanessa/Documents/Netbeans%20projects%208.2/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/web/vista/Dashboard/listaRol.jsp</file>
-            <file>file:/C:/Users/vanessa/Documents/Netbeans%20projects%208.2/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/web/vista/Dashboard/usuario/add.jsp</file>
-            <file>file:/C:/Users/vanessa/Documents/Netbeans%20projects%208.2/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/src/java/servlet/controllerRoles.java</file>
+            <file>file:/C:/Users/gabob/Documents/GitHub/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/web/vista/Dashboard/editEstado.jsp</file>
+            <file>file:/C:/Users/gabob/Documents/GitHub/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/src/java/servlet/controllerEstado.java</file>
+            <file>file:/C:/Users/gabob/Documents/GitHub/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/web/vista/Viajero/indexListaPago.jsp</file>
+            <file>file:/C:/Users/gabob/Documents/GitHub/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/web/vista/Dashboard/listaEstado.jsp</file>
+            <file>file:/C:/Users/gabob/Documents/GitHub/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/src/java/servlet/controllerPago.java</file>
         </group>
     </open-files>
 </project-private>
