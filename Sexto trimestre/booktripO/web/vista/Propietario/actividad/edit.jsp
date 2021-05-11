@@ -29,7 +29,7 @@
                
                         <%
                            municipiosDAO miMDAO = new municipiosDAO();
-                            ArrayList<municipios>  listaM = miMDAO.ConsularListaMunicipio("");
+                            ArrayList<municipios>  listaM = miMDAO.ConsularListaMunicipios("");
                         %> 
                         <select name="txtMunicipio">
                             <%
