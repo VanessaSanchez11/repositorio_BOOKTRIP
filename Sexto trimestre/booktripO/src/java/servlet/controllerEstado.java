@@ -35,8 +35,8 @@ public class controllerEstado extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
 
             String accion = request.getParameter("accion");
-usuarioDao u = new usuarioDao();
-request.getAttribute("copiaU");
+            usuarioDao u = new usuarioDao();
+            request.getAttribute("copiaU");
             switch (accion) {
 
                 case "Listar":

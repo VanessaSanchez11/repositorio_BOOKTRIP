@@ -100,7 +100,7 @@ public class municipiosDAO {
     /*
      Listas
      */
-    public ArrayList<municipios> ConsularListaMunicipios(String criterio) {
+    public ArrayList<municipios> ConsularListaMunicipios(String nombre) {
         ArrayList<municipios> milistaMuni = new ArrayList<municipios>();
 
         municipios miMunicipio;
@@ -112,13 +112,18 @@ public class municipiosDAO {
         try {
             Statement sentencia = nuevaCon.createStatement();
 
-            String Query = "SELECT idDepartamento, idMunicipio, nombre" + " FROM muicipios  where idMunicipio like '%" + criterio + "%' ORDER BY idMunicipio;";
+           // String Query = "SELECT idDepartamento, idMunicipio, nombre" + " FROM muicipios  where idMunicipio like '%" + 
+           //criterio + "%' ORDER BY idMunicipio;";
+            String Query = " select idMunicipio, idDepartamento, nombre from municipios "
+                    + " where "
+                   + "nombre like '%"+ nombre + "%' ORDER BY idMunicipio;";
             ResultSet rs = sentencia.executeQuery(Query);
             while (rs.next()) {
 
                 miMunicipio = new municipios();
-                miMunicipio.setIdDepartamento(rs.getInt(1));
-                miMunicipio.setIdMunicipio(rs.getInt(2));
+              
+                miMunicipio.setIdMunicipio(rs.getInt(1));
+                  miMunicipio.setIdDepartamento(rs.getInt(2));
                 miMunicipio.setNombre(rs.getString(3));
                 
                 milistaMuni.add(miMunicipio);
