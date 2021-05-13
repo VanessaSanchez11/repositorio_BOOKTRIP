@@ -42,10 +42,12 @@ public class controllerServicio extends HttpServlet {
                 case "Listar":
                 List<servicios>lista=dao.listar();
                 request.setAttribute("lista", lista);
-                request.getRequestDispatcher("vista/Propietario/listaServicio.jsp").forward(request, response);
+                out.println("<script type=\"text/javascript\">");
+                out.println("window.location.href='/booktripO/vista/Propietario/indexListaServicio.jsp';");
+                out.println("</script>");
                 break;
             case "Nuevo":                
-               request.getRequestDispatcher("vista/Propietario/servicio/add.jsp").forward(request, response);
+               
                 break;
             case "Guardar":
                 String nom=request.getParameter("txtNombre");
@@ -54,13 +56,18 @@ public class controllerServicio extends HttpServlet {
                 p.setDescripcion(desc);
                 dao.agregar(p);
                 
-                request.getRequestDispatcher("controllerServicio?accion=Listar").forward(request, response);
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('" + "Se ha registrado con exito" + "');");
+                out.println("window.location.href='/booktripO/vista/Propietario/indexListaServicio.jsp';");
+                out.println("</script>");
                 break;
             case "Editar": 
                 int ide=Integer.parseInt(request.getParameter("id"));
                 servicios res=dao.listarId(ide);
                 request.setAttribute("dato",res);
-                request.getRequestDispatcher("vista/Propietario/servicio/edit.jsp").forward(request, response);
+                out.println("<script type=\"text/javascript\">");
+                out.println("window.location.href='/booktripO/vista/Propietario/editServicio.jsp';");
+                out.println("</script>");
                 break;
             case "Actualizar":   
                 int id=Integer.parseInt(request.getParameter("id"));
@@ -71,16 +78,22 @@ public class controllerServicio extends HttpServlet {
                 p.setDescripcion(desc1);
              
                 dao.update(p);
-                request.getRequestDispatcher("controllerServicio?accion=Listar").forward(request, response);
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('" + "Se ha actualizado con exito" + "');");
+                out.println("window.location.href='/booktripO/vista/Propietario/indexListaServicio.jsp';");
+                out.println("</script>");
                 break;
             case "Delete":      
                 int idd= Integer.parseInt(request.getParameter("id"));
                 dao.delete(idd);
-                request.getRequestDispatcher("controllerServicio?accion=Listar").forward(request, response);
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('" + "Se ha eliminado con exito" + "');");
+                out.println("window.location.href='/booktripO/vista/Propietario/indexListaServicio.jsp';");
+                out.println("</script>");
                 break;
             default:
                 out.println("<script type=\"text/javascript\">");
-                out.println("window.location.href='/booktripO/vista/Dashboard/indexListaEstado.jsp';");
+                out.println("window.location.href='/booktripO/vista/Propietario/indexListaServicio.jsp';");
                 out.println("</script>");
                    
             }
