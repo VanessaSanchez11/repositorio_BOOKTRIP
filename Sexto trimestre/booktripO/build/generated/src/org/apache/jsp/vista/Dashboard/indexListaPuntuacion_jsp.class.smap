@@ -1,0 +1,44 @@
+SMAP
+indexListaPuntuacion_jsp.java
+JSP
+*S JSP
+*F
++ 0 header.jsp
+vista/Dashboard/header.jsp
++ 1 indexListaPuntuacion.jsp
+vista/Dashboard/indexListaPuntuacion.jsp
++ 2 sidebar.jsp
+vista/Dashboard/sidebar.jsp
++ 3 content.jsp
+vista/Dashboard/content.jsp
++ 4 listaPuntuacion.jsp
+vista/Dashboard/listaPuntuacion.jsp
++ 5 footer.jsp
+vista/Dashboard/footer.jsp
+*L
+1,3:72
+5,4:76
+8,27:80
+1#1:107,2
+1#2,120:109
+2#1:229,2
+1#3,58:231
+59:289,3
+60,21:292
+3#1:313,2
+1#4,9:315
+11,4:325
+14,43:329
+57,3:373
+59,3:376
+61:567,11
+62:578
+63,6:579,3
+69,2:597
+71:599,3
+72,6:602
+77,41:381
+4#1:421,2
+1#5,125:423
+5#1,2:548
+*E
