@@ -34,112 +34,112 @@ public class controllerInmueble extends HttpServlet {
 
     inmuebles p = new inmuebles();
     inmueblesDAO dao = new inmueblesDAO();
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, FileNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
             String accion = request.getParameter("accion");
- 
+
             switch (accion) {
 
-              case "Listar":
-                List<inmuebles> lista = dao.listar();
-                request.setAttribute("lista", lista);
-                out.println("<script type=\"text/javascript\">");
-                out.println("window.location.href='/booktripO/vista/Propietario/indexListaInmueble.jsp';");
-                out.println("</script>");
-                break;
-            case "Nuevo":
-               
-                break;
-            case "Guardar":
+                case "Listar":
+                    List<inmuebles> lista = dao.listar();
+                    request.setAttribute("lista", lista);
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("window.location.href='/booktripO/vista/Propietario/indexListaInmueble.jsp';");
+                    out.println("</script>");
+                    break;
+                case "Nuevo":
 
-                int tipo = Integer.parseInt(request.getParameter("txtTipo"));
-                int departamento = Integer.parseInt(request.getParameter("txtDepartamento"));
-                int usuario = Integer.parseInt(request.getParameter("txtUsuario"));
-                int estado = Integer.parseInt(request.getParameter("txtEstado"));
-                String nombre = request.getParameter("txtNombre");
-                String direccion = request.getParameter("txtDireccion");
-                int capacidad = Integer.parseInt(request.getParameter("txtCapacidad"));
-                String descripcion = request.getParameter("txtDescripcion");
-                int precio = Integer.parseInt(request.getParameter("txtPrecio"));
-                String adjunto = request.getParameter("txtAdjunto");
-                
-                p.setIdTipo(tipo);
-                p.setIdDepartamento(departamento);
-                p.setIdUsuario(usuario);
-                p.setIdEstado(estado);
-                p.setNombre(nombre);
-                p.setDireccion(direccion);
-                p.setCapacidad(capacidad);
-                p.setDescripcion(descripcion);
-                p.setPrecio(precio);
-                p.setAdjunto(adjunto);
-                dao.agregar(p);
+                    break;
+                case "Guardar":
 
-                out.println("<script type=\"text/javascript\">");
-                   out.println("alert('" + "Se ha registrado con exito" + "');");
-                out.println("window.location.href='/booktripO/vista/Propietario/indexListaInmueble.jsp';");
-                out.println("</script>");
-                break;
-            case "Editar":
-                int ide = Integer.parseInt(request.getParameter("id"));
-                inmuebles res = dao.listarId(ide);
-                request.setAttribute("dato", res);
-               out.println("<script type=\"text/javascript\">");
-                out.println("window.location.href='/booktripO/vista/Propietario/editInmueble.jsp';");
-                out.println("</script>");
-                break;
-            case "Actualizar":
-                int id2 = Integer.parseInt(request.getParameter("id"));
-                int tipo1 = Integer.parseInt(request.getParameter("txtTipo"));
-                int departamento1 = Integer.parseInt(request.getParameter("txtDepartamento"));
-                int usuario1 = Integer.parseInt(request.getParameter("txtUsuario"));
-                int estado1 = Integer.parseInt(request.getParameter("txtEstado"));
-                String nombre1 = request.getParameter("txtNombre");
-                String direccion1 = request.getParameter("txtDireccion");
-                int capacidad1 = Integer.parseInt(request.getParameter("txtCapacidad"));
-                String descripcion1 = request.getParameter("txtDescripcion");
-                int precio1 = Integer.parseInt(request.getParameter("txtPrecio"));
-                String adjunto1 = request.getParameter("txtAdjunto");
-                p.setIdInmueble(id2);
-                p.setIdTipo(tipo1);
-                p.setIdDepartamento(departamento1);
-                p.setIdUsuario(usuario1);
-                p.setIdEstado(estado1);
-                p.setNombre(nombre1);
-                p.setDireccion(direccion1);
-                p.setCapacidad(capacidad1);
-                p.setDescripcion(descripcion1);
-                p.setPrecio(precio1);
-                p.setAdjunto(adjunto1);
+                    int tipo = Integer.parseInt(request.getParameter("txtTipo"));
+                    int departamento = Integer.parseInt(request.getParameter("txtDepartamento"));
+                    int usuario = Integer.parseInt(request.getParameter("txtUsuario"));
+                    int estado = Integer.parseInt(request.getParameter("txtEstado"));
+                    String nombre = request.getParameter("txtNombre");
+                    String direccion = request.getParameter("txtDireccion");
+                    int capacidad = Integer.parseInt(request.getParameter("txtCapacidad"));
+                    String descripcion = request.getParameter("txtDescripcion");
+                    int precio = Integer.parseInt(request.getParameter("txtPrecio"));
+                    String adjunto = request.getParameter("txtAdjunto");
 
-                dao.update(p);
-               out.println("<script type=\"text/javascript\">");
-                   out.println("alert('" + "Se ha actualizado con exito" + "');");
-                out.println("window.location.href='/booktripO/vista/Propietario/indexListaInmueble.jsp';");
-                out.println("</script>");
-                break;
-            case "Delete":
-                int idd = Integer.parseInt(request.getParameter("id"));
-                dao.delete(idd);
-                out.println("<script type=\"text/javascript\">");
-                   out.println("alert('" + "Se ha eliminado con exito" + "');");
-                out.println("window.location.href='/booktripO/vista/Propietario/indexListaInmueble.jsp';");
-                out.println("</script>");
-                break;
-            case "Buscar":
-                String dato = request.getParameter("txtBuscar");
-                List<inmuebles> list = dao.buscar(dato);
-                request.setAttribute("lista", list);
-                break;
-            default:
-                out.println("<script type=\"text/javascript\">");
-                out.println("window.location.href='/booktripO/vista/Propietario/indexListaInmueble.jsp';");
-                out.println("</script>");
-                   
+                    p.setIdTipo(tipo);
+                    p.setIdDepartamento(departamento);
+                    p.setIdUsuario(usuario);
+                    p.setIdEstado(estado);
+                    p.setNombre(nombre);
+                    p.setDireccion(direccion);
+                    p.setCapacidad(capacidad);
+                    p.setDescripcion(descripcion);
+                    p.setPrecio(precio);
+                    p.setAdjunto(adjunto);
+                    dao.agregar(p);
+
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('" + "Se ha registrado con exito" + "');");
+                    out.println("window.location.href='/booktripO/vista/Propietario/indexListaInmueble.jsp';");
+                    out.println("</script>");
+                    break;
+                case "Editar":
+                    int ide = Integer.parseInt(request.getParameter("id"));
+                    inmuebles res = dao.listarId(ide);
+                    request.setAttribute("dato", res);
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("window.location.href='/booktripO/vista/Propietario/editInmueble.jsp';");
+                    out.println("</script>");
+                    break;
+                case "Actualizar":
+                    int id2 = Integer.parseInt(request.getParameter("id"));
+                    int tipo1 = Integer.parseInt(request.getParameter("txtTipo"));
+                    int departamento1 = Integer.parseInt(request.getParameter("txtDepartamento"));
+                    int usuario1 = Integer.parseInt(request.getParameter("txtUsuario"));
+                    int estado1 = Integer.parseInt(request.getParameter("txtEstado"));
+                    String nombre1 = request.getParameter("txtNombre");
+                    String direccion1 = request.getParameter("txtDireccion");
+                    int capacidad1 = Integer.parseInt(request.getParameter("txtCapacidad"));
+                    String descripcion1 = request.getParameter("txtDescripcion");
+                    int precio1 = Integer.parseInt(request.getParameter("txtPrecio"));
+                    String adjunto1 = request.getParameter("txtAdjunto");
+                    p.setIdInmueble(id2);
+                    p.setIdTipo(tipo1);
+                    p.setIdDepartamento(departamento1);
+                    p.setIdUsuario(usuario1);
+                    p.setIdEstado(estado1);
+                    p.setNombre(nombre1);
+                    p.setDireccion(direccion1);
+                    p.setCapacidad(capacidad1);
+                    p.setDescripcion(descripcion1);
+                    p.setPrecio(precio1);
+                    p.setAdjunto(adjunto1);
+
+                    dao.update(p);
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('" + "Se ha actualizado con exito" + "');");
+                    out.println("window.location.href='/booktripO/vista/Propietario/indexListaInmueble.jsp';");
+                    out.println("</script>");
+                    break;
+                case "Delete":
+                    int idd = Integer.parseInt(request.getParameter("id"));
+                    dao.delete(idd);
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('" + "Se ha eliminado con exito" + "');");
+                    out.println("window.location.href='/booktripO/vista/Propietario/indexListaInmueble.jsp';");
+                    out.println("</script>");
+                    break;
+                case "Buscar":
+                    String dato = request.getParameter("txtBuscar");
+                    List<inmuebles> list = dao.buscar(dato);
+                    request.setAttribute("lista", list);
+                    break;
+                default:
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("window.location.href='/booktripO/vista/Propietario/indexListaInmueble.jsp';");
+                    out.println("</script>");
+
             }
         }
     }
