@@ -15,7 +15,7 @@ response.setDateHeader("Expires", 0); // prevents caching at the proxy server
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="modelo.estados"%>
-
+<%@page session="true"%>
 
     <body onload="myFunction();">
        
@@ -58,8 +58,8 @@ response.setDateHeader("Expires", 0); // prevents caching at the proxy server
                             
                             <td style="padding-left:25px;">
                                 <form action="/booktripO/controllerEstado" method="POST">
-                                    <input type="text" name="id" value="${dato.getIdEstado()}">
-                                    <input type="submit" name="accion" value="Editar" class="btn-success btn-block" >
+                                    <input type="hidden" name="id" value="${dato.getIdEstado()}">
+                  <input type="submit" name="accion" value="Editar" class="btn-success btn-block" >
                                     <input type="submit" name="accion" value="Delete" class="btn-danger btn-block" onclick="return confirm('Está seguro que deseas eliminar el registro?');">
                                 </form>
                             </td>

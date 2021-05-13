@@ -35,8 +35,7 @@ public class controllerEstado extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
 
             String accion = request.getParameter("accion");
-            usuarioDao u = new usuarioDao();
-            request.getAttribute("copiaU");
+  String r="";
             switch (accion) {
 
                 case "Listar":
@@ -60,14 +59,17 @@ public class controllerEstado extends HttpServlet {
                     out.println("window.location.href='/booktripO/vista/Dashboard/indexListaEstado.jsp';");
                     out.println("</script>");
                     break;
-                case "Editar":
-                    int ide = Integer.parseInt(request.getParameter("id"));
-                    estados res = dao.listarId(ide);
-                    request.setAttribute("dato", res);
-                    out.println("<script type=\"text/javascript\">");
-                    out.println("window.location.href='/booktripO/vista/Dashboard/editEstado.jsp';");
-                    out.println("</script>");
-                    break;
+               case "Editar":
+                   int ide = Integer.parseInt(request.getParameter("id"));
+                   estados res = dao.listarId(ide);
+                   request.setAttribute("dato", res);
+       request.getRequestDispatcher("vista/Dashboard/editEstado.jsp").forward(request, response);
+//                  out.println("<script type=\"text/javascript\">");
+//                  out.println("window.location.href='/booktripO/vista/Dashboard/editEstado.jsp';");
+//                out.println("</script>");
+//                            
+                 
+                   break;
                 case "Actualizar":
                     int id = Integer.parseInt(request.getParameter("id"));
                     String nom1 = request.getParameter("txtNom");

@@ -5,7 +5,7 @@
  */
 package modelo;
 
-public class usuario {
+public class usuario extends rol {
 
     public usuario(String email, String password) {
         this.email = email;
