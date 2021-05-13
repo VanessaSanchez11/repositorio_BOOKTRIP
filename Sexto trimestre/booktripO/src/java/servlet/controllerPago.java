@@ -5,20 +5,25 @@
  */
 package servlet;
 
+import controlador.estadosDAO;
 import controlador.pagosDAO;
+import controlador.usuarioDao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import modelo.estados;
 import modelo.pagos;
 
 /**
  *
- * @author gabob
+ * @author oscar sanabria
  */
 @WebServlet(name = "controllerPago", urlPatterns = {"/controllerPago"})
 public class controllerPago extends HttpServlet {
@@ -29,69 +34,88 @@ public class controllerPago extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String accion = request.getParameter("accion");
-        switch (accion) {
-            case "Listar":
-                List<pagos> lista = dao.listar();
-                request.setAttribute("lista", lista);
-                request.getRequestDispatcher("vista/Viajero/listaPago.jsp").forward(request, response);
-                break;
-            case "Nuevo":
-                request.getRequestDispatcher("vista/Viajero/pago/add.jsp").forward(request, response);
-                break;
-            case "Guardar":
+        try (PrintWriter out = response.getWriter()) {
 
-                int usuario = Integer.parseInt(request.getParameter("txtUsuario"));
-                int inmueble = Integer.parseInt(request.getParameter("txtInmueble"));
-                String adjunto = request.getParameter("txtAdjunto");
-                int monto = Integer.parseInt(request.getParameter("txtMonto"));
-                String fecha1 = request.getParameter("txtFechaPago");
-                String fecha2 = request.getParameter("txtFechaPago2");
+            String accion = request.getParameter("accion");
 
-                p.setIdUsuario(usuario);
-                p.setIdInmueble(inmueble);
-                p.setAdjunto(adjunto);
-                p.setMonto(monto);
-                p.setFechaPago(fecha1);
-                p.setFechaPago2(fecha2);
-                dao.agregar(p);
+            switch (accion) {
 
-                request.getRequestDispatcher("controllerPago?accion=Listar").forward(request, response);
-                break;
-            case "Editar":
-                int ide = Integer.parseInt(request.getParameter("id"));
-                pagos res = dao.listarId(ide);
-                request.setAttribute("dato", res);
-                request.getRequestDispatcher("vista/Viajero/pago/edit.jsp").forward(request, response);
-                break;
-            case "Actualizar":
+                case "Listar":
+                    List<pagos> lista = dao.listar();
+                    request.setAttribute("lista", lista);
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("window.location.href='/booktripO/vista/Viajero/indexListaPago.jsp';");
+                    out.println("</script>");
+                    break;
+                case "Nuevo":
 
-                int usuario2 = Integer.parseInt(request.getParameter("txtUsuario"));
-                int inmueble2 = Integer.parseInt(request.getParameter("txtInmueble"));
-                String adjunto2 = request.getParameter("txtAdjunto");
-                int monto2 = Integer.parseInt(request.getParameter("txtMonto"));
-                String Fecha1 = request.getParameter("txtFechaPago");
-                String Fecha2 = request.getParameter("txtFechaPago2");
+//                request.getRequestDispatcher("vista/Viajero/pago/add.jsp").forward(request, response);
+                    break;
+                case "Guardar":
 
-                p.setIdUsuario(usuario2);
-                p.setIdInmueble(inmueble2);
-                p.setAdjunto(adjunto2);
-                p.setMonto(monto2);
-                p.setFechaPago(Fecha1);
-                p.setFechaPago2(Fecha2);
-                dao.update(p);
-                request.getRequestDispatcher("controllerPago?accion=Listar").forward(request, response);
-                break;
-            case "Delete":
-                int idd = Integer.parseInt(request.getParameter("id"));
-                dao.delete(idd);
-                request.getRequestDispatcher("controllerPago?accion=Listar").forward(request, response);
-                break;
-            default:
-                request.getRequestDispatcher("controllerPago?accion=Listar").forward(request, response);
-                ;
+                    int usuario = Integer.parseInt(request.getParameter("txtUsuario"));
+                    int inmueble = Integer.parseInt(request.getParameter("txtInmueble"));
+                    String adjunto = request.getParameter("txtAdjunto");
+                    int monto = Integer.parseInt(request.getParameter("txtMonto"));
+                    String fecha1 = request.getParameter("txtFechaPago");
+                    String fecha2 = request.getParameter("txtFechaPago2");
+
+                    p.setIdUsuario(usuario);
+                    p.setIdInmueble(inmueble);
+                    p.setAdjunto(adjunto);
+                    p.setMonto(monto);
+                    p.setFechaPago(fecha1);
+                    p.setFechaPago2(fecha2);
+                    dao.agregar(p);
+
+                     out.println("<script type=\"text/javascript\">");
+                    out.println("alert('" + "Se ha registrado con exito" + "');");
+                    out.println("window.location.href='/booktripO/vista/Viajero/indexListaPago.jsp';");
+                    out.println("</script>");
+                    break;
+                case "Editar":
+                    int ide = Integer.parseInt(request.getParameter("id"));
+                    pagos res = dao.listarId(ide);
+                    request.setAttribute("dato", res);
+                    request.getRequestDispatcher("vista/Viajero/editPago.jsp").forward(request, response);
+                    break;
+                case "Actualizar":
+
+                    int usuario2 = Integer.parseInt(request.getParameter("txtUsuario"));
+                    int inmueble2 = Integer.parseInt(request.getParameter("txtInmueble"));
+                    String adjunto2 = request.getParameter("txtAdjunto");
+                    int monto2 = Integer.parseInt(request.getParameter("txtMonto"));
+                    String Fecha1 = request.getParameter("txtFechaPago");
+                    String Fecha2 = request.getParameter("txtFechaPago2");
+
+                    p.setIdUsuario(usuario2);
+                    p.setIdInmueble(inmueble2);
+                    p.setAdjunto(adjunto2);
+                    p.setMonto(monto2);
+                    p.setFechaPago(Fecha1);
+                    p.setFechaPago2(Fecha2);
+                    dao.update(p);
+                   out.println("<script type=\"text/javascript\">");
+                    out.println("alert('" + "Se ha actualizado con exito" + "');");
+                    out.println("window.location.href='/booktripO/vista/Viajero/indexListaPago.jsp';");
+                    out.println("</script>");
+                    break;
+                case "Delete":
+                    int idd = Integer.parseInt(request.getParameter("id"));
+                    dao.delete(idd);
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('" + "Se ha eliminado con exito" + "');");
+                    out.println("window.location.href='/booktripO/vista/Viajero/indexListaPago.jsp';");
+                    out.println("</script>");
+                    break;
+                default:
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("window.location.href='/booktripO/vista/Viajero/indexListaPago.jsp';");
+                    out.println("</script>");
+                    ;
+
+            }
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -121,6 +145,7 @@ public class controllerPago extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+
     }
 
     /**

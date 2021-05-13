@@ -8,12 +8,14 @@ package servlet;
 import controlador.departamentosDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import modelo.departamento;
 
 /**
@@ -22,50 +24,84 @@ import modelo.departamento;
  */
 @WebServlet(name = "controllerDepartamento", urlPatterns = {"/controllerDepartamento"})
 public class controllerDepartamento extends HttpServlet {
- departamento p=new departamento();
-    departamentosDAO dao=new departamentosDAO();
+
+    departamento p = new departamento();
+    departamentosDAO dao = new departamentosDAO();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String accion=request.getParameter("accion");
+        String accion = request.getParameter("accion");
         switch (accion) {
+            /* LISTAR */
+
             case "Listar":
-                List<departamento>lista=dao.listar();
+                List<departamento> lista = dao.listar();
                 request.setAttribute("lista", lista);
-                request.getRequestDispatcher("vista/Dashboard/listaDepartamento.jsp").forward(request, response);
+                out.println("<script type=\"text/javascript\">");
+                out.println("window.location.href='/booktripO/vista/Dashboard/indexListaDepartamento.jsp';");
+                out.println("</script>");
                 break;
-            case "Nuevo":                
-               request.getRequestDispatcher("vista/Dashboard/departamento/add.jsp").forward(request, response);
+            /* AGREGAR */
+
+            case "Nuevo":
+
                 break;
+            /*GUARDAR*/
             case "Guardar":
-                String nom=request.getParameter("txtNombre");
+                String nom = request.getParameter("txtNombre");
                 p.setNombre(nom);
                 dao.agregar(p);
-                
-                request.getRequestDispatcher("controllerDepartamento?accion=Listar").forward(request, response);
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('" + "Se ha registrado con exito" + "');");
+                out.println("window.location.href='/booktripO/vista/Dashboard/indexListaDepartamento.jsp';");
+                out.println("</script>");
+
                 break;
-            case "Editar": 
-                int ide=Integer.parseInt(request.getParameter("id"));
-                departamento res=dao.listarId(ide);
-                request.setAttribute("dato",res);
+            case "Editar":
+                int ide = Integer.parseInt(request.getParameter("id"));
+                departamento res = dao.listarId(ide);
+                request.setAttribute("dato", res);
                 request.getRequestDispatcher("vista/Dashboard/departamento/edit.jsp").forward(request, response);
                 break;
-            case "Actualizar":   
-                int id=Integer.parseInt(request.getParameter("id"));
-                String nom1=request.getParameter("txtNombre");
+            /* ACTUALIZAR */
+
+            case "Actualizar":
+                int id = Integer.parseInt(request.getParameter("id"));
+                String nom1 = request.getParameter("txtNombre");
                 p.setIdDepartamento(id);
                 p.setNombre(nom1);
-             
                 dao.update(p);
-                request.getRequestDispatcher("controllerDepartamento?accion=Listar").forward(request, response);
+                HttpSession sesion = request.getSession();
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('" + "Se ha actualizado con exito" + "');");
+                out.println("window.location.href='/booktripO/vista/Dashboard/indexListaDepartamento.jsp';");
+                out.println("</script>");
                 break;
-            case "Delete":      
-                int idd= Integer.parseInt(request.getParameter("id"));
+            /**
+             * ELIMINAR
+             *
+             */
+            case "Delete":
+                int idd = Integer.parseInt(request.getParameter("id"));
                 dao.delete(idd);
-                request.getRequestDispatcher("controllerDepartamento?accion=Listar").forward(request, response);
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('" + "Se ha eliminado con exito" + "');");
+                out.println("window.location.href='/booktripO/vista/Dashboard/indexListaDepartamento.jsp';");
+                out.println("</script>");
                 break;
+
+            /*BUSCAR*/
+            case "Buscar":
+                String dato = request.getParameter("txtBuscar");
+                List<departamento> list = dao.buscar(dato);
+                request.setAttribute("lista", list);
+                break;
+
             default:
-                request.getRequestDispatcher("controllerDepartamento?accion=Listar").forward(request, response);;
+                out.println("<script type=\"text/javascript\">");
+                out.println("window.location.href='/booktripO/vista/Dashboard/indexListaDepartamento.jsp';");
+                out.println("</script>");
         }
     }
 
