@@ -19,7 +19,7 @@ response.setDateHeader("Expires", 0); // prevents caching at the proxy server
 <%@page import="modelo.estados"%>
 
 
-<body>
+<body> s
        
     <center> <div class="col-md-6">
             <form action="/booktripO/controllerServicio" method="POST"  onsubmit="return validarServicio()">
