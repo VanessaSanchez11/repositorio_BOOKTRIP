@@ -12,10 +12,16 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/gabob/Documents/GitHub/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/web/vista/Dashboard/listaPuntuacion.jsp</file>
             <file>file:/C:/Users/gabob/Documents/GitHub/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/web/vista/Dashboard/indexListaPuntuacion.jsp</file>
             <file>file:/C:/Users/gabob/Documents/GitHub/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/web/vista/Dashboard/listaEstado.jsp</file>
             <file>file:/C:/Users/gabob/Documents/GitHub/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/web/vista/Dashboard/puntuacion/add.jsp</file>
+=======
+            <file>file:/C:/Users/oscar%20sanabria/Documents/GitHub/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/src/java/servlet/controllerInmueble.java</file>
+            <file>file:/C:/Users/oscar%20sanabria/Documents/GitHub/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/src/java/servlet/controllerEstado.java</file>
+            <file>file:/C:/Users/oscar%20sanabria/Documents/GitHub/repositorio_BOOKTRIP/Sexto%20trimestre/booktripO/web/vista/login.jsp</file>
+>>>>>>> master
         </group>
     </open-files>
 </project-private>

@@ -27,6 +27,11 @@ public class solicitudinmueblesDAO {
     public List listar() {
         List<solicitudinmuebles> lista = new ArrayList<>();
         String sql = "select * from solicitudinmuebles";
+//        String sql = "SELECT solicitudinmuebles.idSolicitud, inmuebles.nombre, usuarios.nombre, estados.nombre,"
+//                + " solicitudinmuebles.fecha FROM solicitudinmuebles INNER JOIN inmuebles "
+//                + "on solicitudinmuebles.idInmueble=inmuebles.idInmueble INNER JOIN usuarios "
+//                + "on solicitudinmuebles.idUsuario=usuarios.idUsuario INNER JOIN estados on"
+//                + "solicitudinmuebles.idEstado=estados.idEstado";
         try {
             con = c.getConn();
             ps = con.prepareStatement(sql);

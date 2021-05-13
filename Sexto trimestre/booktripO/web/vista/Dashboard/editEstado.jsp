@@ -1,9 +1,5 @@
-<%@page import="controlador.estadosDAO"%>
-<%@page import="modelo.estados"%>
 <%@include file="header.jsp" %>
-<%@include file="sidebar.jsp" %>
-<%@include file="content.jsp" %>
-<%@include file="realContent.jsp" %>
+
 <center>
          
     <div class="container">
@@ -20,7 +16,7 @@
                 <div col-md-3><label>Nombre:</label></div>
                 <div col-md-3>
                     <input type="text" name="txtNom" value="${dato.getNombre()}">
-                    <input type="text" name="id" value="${dato.getIdEstado()}">
+                    <input type="hidden" name="id" value="${dato.getIdEstado()}">
                 </div>
             </div>
    
@@ -35,4 +31,4 @@
             </div>
 </center>
 
-<%@include file="footer.jsp" %>
+

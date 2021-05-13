@@ -6,41 +6,56 @@
 package servlet;
 
 import controlador.actividadesDAO;
+import controlador.estadosDAO;
+import controlador.usuarioDao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import modelo.actividades;
+import modelo.estados;
 
 /**
  *
- * @author 57321
+ * @author oscar sanabria
  */
 @WebServlet(name = "controllerActividad", urlPatterns = {"/controllerActividad"})
 public class controllerActividad extends HttpServlet {
 
-    actividades p=new actividades();
+      actividades p=new actividades();
     actividadesDAO dao=new actividadesDAO();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-         String accion=request.getParameter("accion");
-        switch (accion) {
-            case "Listar":
+        try (PrintWriter out = response.getWriter()) {
+
+            String accion = request.getParameter("accion");
+            usuarioDao u = new usuarioDao();
+            request.getAttribute("copiaU");
+            switch (accion) {
+
+               case "Listar":
                 List<actividades>lista=dao.listar();
                 request.setAttribute("lista", lista);
-                request.getRequestDispatcher("vista/Propietario/listaActividad.jsp").forward(request, response);
+                out.println("<script type=\"text/javascript\">");
+                out.println("window.location.href='/booktripO/vista/Propietario/indexListaActividad.jsp';");
+                out.println("</script>");
                 break;
+  
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             case "Nuevo":                
                 request.getRequestDispatcher("vista/Propietario/actividad/add.jsp").forward(request, response);
                 break;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                
             case "Guardar":
                 int municipio=Integer.parseInt(request.getParameter("txtMunicipio"));
-                
                 String nombre=request.getParameter("txtNombre");
                 String lugar=request.getParameter("txtLugar");
                 String descripcion=request.getParameter("txtDescripcion");
@@ -50,15 +65,20 @@ public class controllerActividad extends HttpServlet {
                 p.setLugar(lugar);
                 p.setDescripcion(descripcion);
                dao.agregar(p);
- 
-                request.getRequestDispatcher("controllerActividad?accion=Listar").forward(request, response);
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('" + "Se ha registrado con exito" + "');");
+                out.println("window.location.href='/booktripO/vista/Propietario/indexListaActividad.jsp';");
+                out.println("</script>");
+               
                 break;
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
             case "Editar": 
                 int ide=Integer.parseInt(request.getParameter("id"));
                 actividades res=dao.listarId(ide);
                 request.setAttribute("dato",res);
-                request.getRequestDispatcher("vista/Propietario/actividad/edit.jsp").forward(request, response);
+                request.getRequestDispatcher("vista/Propietario/editActividad.jsp").forward(request, response);
                 break;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                 
             case "Actualizar":   
                 int id=Integer.parseInt(request.getParameter("id"));
                 int municipio1=Integer.parseInt(request.getParameter("txtMunicipio"));
@@ -71,20 +91,37 @@ public class controllerActividad extends HttpServlet {
                 p.setNombre(nombre1);
                 p.setLugar(lugar1);
                 p.setDescripcion(descripcion1);
-           
-               
                 dao.update(p);
-                request.getRequestDispatcher("controllerActividad?accion=Listar").forward(request, response);
+                HttpSession sesion = request.getSession();
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('" + "Se ha actualizado con exito" + "');");
+                out.println("window.location.href='/booktripO/vista/Propietario/indexListaActividad.jsp';");
+                out.println("</script>");
                 break;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                 
             case "Delete":      
                 int idd= Integer.parseInt(request.getParameter("id"));
                 dao.delete(idd);
-                request.getRequestDispatcher("controllerActividad?accion=Listar").forward(request, response);
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('" + "Se ha eliminado con exito" + "');");
+                out.println("window.location.href='/booktripO/vista//Propietario/indexListaActividad.jsp';");
+                out.println("</script>");
                 break;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////           
+          
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////            
+            
+            
+            
             default:
-                request.getRequestDispatcher("controllerActividad?accion=Listar").forward(request, response);;
+                out.println("<script type=\"text/javascript\">");
+                out.println("window.location.href='/booktripO/vista/Propietario/indexListaActividad.jsp';");
+                out.println("</script>");
+
+                
+
+            }
         }
-    
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -114,6 +151,7 @@ public class controllerActividad extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+
     }
 
     /**

@@ -3,13 +3,14 @@ package servlet;
 import controlador.municipiosDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.actividades;
+import javax.servlet.http.HttpSession;
 import modelo.municipios;
 
 /**
@@ -31,11 +32,18 @@ public class controllerMunicipio extends HttpServlet {
             case "Listar":
                 List<municipios> lista = dao.listar();
                 request.setAttribute("lista", lista);
-                request.getRequestDispatcher("vista/Dashboard/listaMunicipios.jsp").forward(request, response);
+                out.println("<script type=\"text/javascript\">");
+                out.println("window.location.href='/booktripO/vista/Dashboard/indexListaMunicipio.jsp';");
+                out.println("</script>");
                 break;
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////               
+            
             case "Nuevo":
                 request.getRequestDispatcher("vista/Dashboard/listaMunicipios.jsp").forward(request, response);
                 break;
+                
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                
+           
             case "Guardar":
                 int departamento = Integer.parseInt(request.getParameter("txtDepartamento"));
 
@@ -44,17 +52,26 @@ public class controllerMunicipio extends HttpServlet {
                 p.setIdDepartamento(departamento);
                 p.setNombre(nombre);
                 dao.agregar(p);
-                request.getRequestDispatcher("controllerMunicipio?accion=Listar").forward(request, response);
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('" + "Se ha registrado con exito" + "');");
+                out.println("window.location.href='/booktripO/vista/Dashboard/indexListaMunicipio.jsp';");
+                out.println("</script>");
+                
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                
+               
                 break;
             case "Editar":
-                
+
                 int ide = Integer.parseInt(request.getParameter("id"));
                 municipios res = dao.listarId(ide);
                 request.setAttribute("dato", res);
                 request.getRequestDispatcher("vista/Dashboard/municipio/edit.jsp").forward(request, response);
                 break;
-            case "Actualizar":
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                
                 
+                
+            case "Actualizar":
+
                 int id = Integer.parseInt(request.getParameter("id"));
                 int departamento1 = Integer.parseInt(request.getParameter("txtDepartamento"));
                 String nombre1 = request.getParameter("txtNombre");
@@ -62,18 +79,36 @@ public class controllerMunicipio extends HttpServlet {
                 p.setIdMunicipio(id);
                 p.setIdMunicipio(departamento1);
                 p.setNombre(nombre1);
-
                 dao.update(p);
-                request.getRequestDispatcher("controllerMunicipio?accion=Listar").forward(request, response);
-                break;
+               HttpSession sesion = request.getSession();
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('" + "Se ha actualizado con exito" + "');");
+                    out.println("window.location.href='/booktripO/vista/Dashboard/indexListaMunicipio.jsp';");
+                    out.println("</script>");
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                
+            
             case "Delete":
                 int idd = Integer.parseInt(request.getParameter("id"));
                 dao.delete(idd);
-                request.getRequestDispatcher("controllerMunicipio?accion=Listar").forward(request, response);
+                out.println("<script type=\"text/javascript\">");
+                    out.println("alert('" + "Se ha eliminado con exito" + "');");
+                    out.println("window.location.href='/booktripO/vista/Dashboard/indexListaMunicipio.jsp';");
+                    out.println("</script>");
                 break;
+                
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            
+             case "Buscar":
+                    String dato = request.getParameter("txtBuscar");
+                    List<municipios> list = dao.ConsularListaMunicipios(dato);
+                    request.setAttribute("lista", list);
+                    break;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            
             default:
-                request.getRequestDispatcher("controllerMunicipio?accion=Listar").forward(request, response);
-                ;
+                out.println("<script type=\"text/javascript\">");
+                out.println("window.location.href='/booktripO/vista/Dashboard/indexListaMunicipio.jsp';");
+                out.println("</script>");
         }
 
     }
