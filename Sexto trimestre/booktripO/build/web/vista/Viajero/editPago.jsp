@@ -15,10 +15,10 @@
             
              <div class="container  col-md-6 mt-5 bg-light">
         <center>
-        <h3>Actualizar Pago</h3>
+        <h3>Actualizar estado</h3>
         <hr>
         <br>
-        <form action="controllerPago" method="POST">
+       <form action="controllerPago" method="POST">
 
             <label>id usuario</label>
             <div class="col-sm-6">

@@ -11,8 +11,8 @@ vista/Viajero/indexListaPago.jsp
 vista/Viajero/sidebar.jsp
 + 3 content.jsp
 vista/Viajero/content.jsp
-+ 4 listaPago2.jsp
-vista/Viajero/listaPago2.jsp
++ 4 listaPago.jsp
+vista/Viajero/listaPago.jsp
 + 5 footer.jsp
 vista/Viajero/footer.jsp
 *L
@@ -27,12 +27,12 @@ vista/Viajero/footer.jsp
 19,43:429
 62,3:473
 64,3:476
-66:741,11
-67:752
-68,7:753,3
-75,2:774
-77:776,3
-78,6:779
+66:742,11
+67:753
+68,7:754,3
+75,2:775
+77:777,3
+78,6:780
 83,25:481
 108,3:507
 110,3:510
@@ -47,8 +47,8 @@ vista/Viajero/footer.jsp
 133:546,6
 134:552
 135,2:554
-136,41:556
-4#1:596,2
-1#5,124:598
-5#1,2:722
+136,42:556
+4#1:597,2
+1#5,124:599
+5#1,2:723
 *E
