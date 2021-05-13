@@ -12,18 +12,47 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import modelo.rol;
 import modelo.usuario;
 
 public class usuarioDao {
-
+public int validar(String usuario, String contra){
+    int nivel=0;
+    Conexion connect = new Conexion();
+        Connection newConexion;
+        newConexion = connect.getConn();
+        PreparedStatement pst;
+        ResultSet rs;
+    try {  
+      Statement sentencia = newConexion.createStatement();    
+        String sql = "select idRol usuarios  where email = '" + usuario+ "' and password =md5 '" +contra+ "'";
+        pst = con.prepareStatement(sql);
+            rs = pst.executeQuery();
+            while (rs.next()) { 
+          usuario user = new usuario();
+           //user.setIdRol(rs.getInt(1));
+            nivel=rs.getInt(1);
+        } 
+       connect.CerrarConexion();
+       rs.close();
+        return nivel;
+    } catch (Exception e) {
+    }
+    return nivel;
+}
    
-public int loguear(usuario log1) throws ClassNotFoundException, SQLException {
+public int loguear(usuario log) throws ClassNotFoundException, SQLException {
+    usuario user = null;
+
+        Conexion connect = new Conexion();
+        Connection newConexion;
+        newConexion = connect.getConn();
         PreparedStatement pst;
         ResultSet rs;
         int cont=0;
         int nivel=0;
         
-        String sql = "select idRol usuarios  where email = '" + log1.getEmail()+ "' and password =md5 '" + log1.getPassword()+ "'";
+        String sql = "select idRol usuarios  where email = '" + log.getEmail()+ "' and password =md5 '" + log.getPassword()+ "'";
                   
             pst = con.prepareStatement(sql);
             rs = pst.executeQuery();
@@ -45,7 +74,6 @@ public int loguear(usuario log1) throws ClassNotFoundException, SQLException {
 
         try {
             Statement sentencia = newConexion.createStatement();
-
             String sql = "select idUsuario, idTipoDocumento, numDocu, idRol, nombre, apellido, direccion, telefono, fechaNacimiento, email, password" 
                     + " FROM usuarios WHERE email = '" + email + "' AND password=md5('"+ password+ "')";
             
@@ -66,6 +94,7 @@ public int loguear(usuario log1) throws ClassNotFoundException, SQLException {
                 user.setFechaNacimiento(rs.getString(9));
                 user.setEmail(rs.getString(10));
                 user.setPassword(rs.getString(11));
+                //user.setni
 
             }
 

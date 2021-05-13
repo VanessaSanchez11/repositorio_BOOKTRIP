@@ -137,5 +137,9 @@ PreparedStatement ps;
     eliminar
      */
 
+    public List<departamento> buscar(String dato) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
 }

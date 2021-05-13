@@ -1,9 +1,5 @@
-<%@page import="controlador.estadosDAO"%>
-<%@page import="modelo.estados"%>
 <%@include file="header.jsp" %>
-<%@include file="sidebar.jsp" %>
-<%@include file="content.jsp" %>
-<%@include file="realContent.jsp" %>
+
 <center>
          
     <div class="container">
@@ -13,7 +9,8 @@
         <h3>Actualizar estado</h3>
         <hr>
         <br>
-        <form action="/booktripO/controllerEstado" method="POST"  onsubmit="return validar()" >
+        <form action="/booktripO/controllerEstado" method="POST" >
+           
            
             <div col-md-6>
                 <div col-md-3><label>Nombre:</label></div>
@@ -34,4 +31,4 @@
             </div>
 </center>
 
-<%@include file="footer.jsp" %>
+

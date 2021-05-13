@@ -18,7 +18,6 @@ import javax.servlet.http.HttpSession;
 import modelo.usuario;
 
 /**
- *
  * @author oscar sanabria
  */
 @WebServlet(name = "controllerUsuario", urlPatterns = {"/controllerUsuario"})
@@ -29,16 +28,18 @@ public class controllerUsuario extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        String accion = request.getParameter("accion");
+        try (PrintWriter out = response.getWriter()) {
+        String accion = request.getParameter("accion"); 
         switch (accion) {
             case "Listar":
                 List<usuario> lista = dao.listar();
                 request.setAttribute("lista", lista);
-                request.getRequestDispatcher("vista/Dashboard/listaUsuario.jsp").forward(request, response);
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("window.location.href='/booktripO/vista/login.jsp';");
+                    out.println("</script>");
                 break;
             case "Nuevo":
-                request.getRequestDispatcher("vista/Dashboard/usuario/add.jsp").forward(request, response);
+               
                 break;
             case "Guardar":
                 int idTipo = Integer.parseInt(request.getParameter("txtTipoDocumento"));
@@ -47,10 +48,10 @@ public class controllerUsuario extends HttpServlet {
                 String nombre = request.getParameter("txtNombre");
                 String apellido = request.getParameter("txtApellido");
                 String direccion = request.getParameter("txtDireccion");
+                //String telefono = request.getParameter("txtTelefono");
                 int telefono = Integer.parseInt(request.getParameter("txtTelefono"));
                 String fecha = request.getParameter("txtFecha");
-                String email = request.getParameter("txtEmail");
-                
+                String email = request.getParameter("txtEmail");     
                 String password = request.getParameter("txtPassword");
 
                 p.setIdTipoDocumento(idTipo);
@@ -65,7 +66,7 @@ public class controllerUsuario extends HttpServlet {
                 p.setPassword(password);
 
                 dao.agregar(p);
- HttpSession session =request.getSession();
+                HttpSession session =request.getSession();
                 request.getRequestDispatcher("controllerUsuario?accion=Listar").forward(request, response);
                 break;
             case "Editar":
@@ -112,7 +113,7 @@ public class controllerUsuario extends HttpServlet {
                 ;
         }
     }
-
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

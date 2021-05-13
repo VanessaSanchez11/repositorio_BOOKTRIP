@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import modelo.usuario;
 import controlador.usuarioDao;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpSession;
@@ -41,34 +42,53 @@ public class login extends HttpServlet {
                 usuarioDao userC = new usuarioDao();
                 usuario user = new usuario();
                 user = userC.consultarUsuario(email, password);
-                String nombre;
-              
-
+                String nombre = user.getNombre();
+                int rol= user.getIdRol();
+           
                 if (user == null) {
                     System.out.println(email);
                     out.println("<script type=\"text/javascript\">");
-                    out.println("alert('" + "Este email : " + email + "   no es correcto" + "');");
+                    out.println("alert('" + "Este email o contraseña : " + email + "   no es correcto" + "');");
                     out.println("window.location.href='/booktripO/vista/login.jsp';");
                     out.println("</script>");
                 } else {
-                    HttpSession session = request.getSession();
-                     session.setAttribute("copiaU", userC);
-                    request.getSession().setAttribute("email", email);
-                    System.out.println(user.getPassword());
-                    System.out.println(password);
-                    
-        
-        
-//////////////////////////////////////////////////////////
-                    out.println("<script type=\"text/javascript\">");
-                    out.println("alert('" + "Bienvenido: " + user.getNombre() + "  " + user.getApellido() + "');");
-                    out.println("window.location.href='/booktripO/vista/Dashboard/indexDashboard.jsp';");
-                    out.println("</script>");
-
+                   HttpSession sesion = request.getSession();
+              switch(user.getIdRol())
+                {
+                    case 1 : 
+                        sesion.setAttribute("user", nombre);
+                         sesion.setAttribute("rol",rol );
+                        out.println("<script type=\"text/javascript\">");
+                             out.println("alert('" + "Bienvenido: " + user.getNombre() + "  " + user.getApellido() + "');");
+                             out.println("window.location.href='/booktripO/vista/Dashboard/indexListaEstado.jsp';");
+                             out.println("</script>"); 
+                    break;
+                         case 2 : out.println("<script type=\"text/javascript\">");
+                             out.println("alert('" + "Bienvenido: " + user.getNombre() + "  " + user.getApellido() + "');");
+                             out.println("window.location.href='/booktripO/vista/Propietario/indexListaInmueble.jsp';");
+                             out.println("</script>"); 
+                    break;
+                              case 3 : out.println("<script type=\"text/javascript\">");
+                             out.println("alert('" + "Bienvenido: " + user.getNombre() + "  " + user.getApellido() + "');");
+                             out.println("window.location.href='/booktripO/vista/Viajero/indexListaPago.jsp';");
+                             out.println("</script>"); 
+                    break;
+                        
+                    default:
+                             out.println("<script type=\"text/javascript\">");
+                             out.println("alert('" + "Bienvenido: " + user.getNombre() + "  " + user.getApellido() + "');");
+                             out.println("window.location.href='/booktripO/';");
+                             out.println("</script>"); 
+               
+                    break;
+                
+                }
+   
                 }
 
             } catch (Exception ex) {
                 System.err.println(ex.getMessage());
+                System.err.println(ex.getStackTrace());
                 System.out.println("este es el catch");
             }
 
