@@ -1,0 +1,88 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23/04/2021, 11:21:07 PM
+    Author     : vanessa
+*/
+body{
+    background-color: #3a68f1;
+}
+.bg-gradient-primary {
+    /* background-color: #4e73df; */
+    background-color: #3a68f1;
+    /* background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%); */
+    background-size: cover;
+}
+.card{
+    background-color: #fff;
+}
+.tituloBooktrip {
+    color: #fff;
+    font-family: 'PT Serif', serif;
+    font-size: 50px;
+    margin: 30px 0 0 0;
+}
+
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.bg-register-image {
+    background: url("../img/candelaria.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-login-image {
+    background: url("../img/fondo2.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+    padding: 15px;
+    border-radius: 25px;
+    margin: 9px;
+   
+}
+.Combobox{
+    padding: 13px;
+    border-radius: 25px;
+    margin: 9px;
+}
+form .cajaCombobox {
+    padding: 13px;
+}
+
+form .btn-user {
+    border-radius: 10rem;
+    padding: 0.75rem 1rem;
+}
+
+
+
+
+.form-group  small {
+    color: #e74c3c;
+    visibility: hidden;
+    padding: 25px;
+   
+}
+
+.form-group.error small {
+    
+    visibility: visible;
+    padding: 25px;
+    margin-left: 12px;
+}
+.form-control.error input {
+    border-color: #e74c3c;
+}
+.form-group.success input {
+    border-color: #2ecc71;
+}
