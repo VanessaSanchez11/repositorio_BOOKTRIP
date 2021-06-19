@@ -30,33 +30,7 @@
     </head>
 
     <body class="bg-gradient-primary">
- <% HttpSession sesion = request.getSession();
-            int nivel = 0;
-            if (request.getAttribute("rol")!=null) {
-                nivel = (Integer) request.getAttribute("rol");
-                if (nivel==1) {
-                    sesion.setAttribute("nombre", request.getAttribute("email"));
-                     sesion.setAttribute("nivel",nivel);
-                      out.println("<script type=\"text/javascript\">");
-                    out.println("window.location.href='/booktripO/vista/Dashboard/indexListaSolicitud.jsp';");
-                    out.println("</script>");
-                }
-                if (nivel==2) {
-                    sesion.setAttribute("email", request.getAttribute("email"));
-                     sesion.setAttribute("nivel",nivel);
-                      out.println("<script type=\"text/javascript\">");
-                    out.println("window.location.href='/booktripO/vista/Propietario/indexListaInmueble.jsp';");
-                    out.println("</script>");
-                }if (nivel==3) {
-                    sesion.setAttribute("email", request.getAttribute("email"));
-                     sesion.setAttribute("nivel",nivel);
-                     out.println("<script type=\"text/javascript\">");
-                    out.println("window.location.href='/booktripO/vista/Viajero/indexListaPago.jsp';");
-                    out.println("</script>");
-                }
-            }
-
-        %>
+ 
         <a href="index.jsp" class="btn btn-outline-light ml-sm-5 mt-4">Volver al inicio</a>
         <div class="container">
             <h1 class="row justify-content-center tituloBooktrip">Booktrip</h1>
@@ -75,7 +49,7 @@
                                         <div class="text-center">
                                             <h1 class="h4 text-gray-900 mb-4">Iniciar sesión</h1>
                                         </div>
-                                        <form class="user" action="/booktripO/login" method="post">
+                                        <form class="user" action="/booktripO/login2" method="post">
                                             <div class="form-group">
                                                 <input type="email" class="form-control form-control-user
                                                        " name="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email">
