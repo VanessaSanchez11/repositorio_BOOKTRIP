@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	 version="3.1">
+        <servlet>
+        <servlet-name>IniciarSesion</servlet-name>
+        <servlet-class>servlet.IniciarSesion</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>IniciarSesion</servlet-name>
+        <url-pattern>/IniciarSesion</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>registroUsuario</servlet-name>
+        <servlet-class>servlet.registroUsuario</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>registroUsuario</servlet-name>
+        <url-pattern>/registroUsuario</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>registroEstado</servlet-name>
+        <servlet-class>servlet.registroEstado</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>registroEstado</servlet-name>
+        <url-pattern>/registroEstado</url-pattern>
+    </servlet-mapping>
+     <servlet>
+        <servlet-name>registroTipoInmueble</servlet-name>
+        <servlet-class>servlet.registroTipoInmueble</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>registroTipoInmueble</servlet-name>
+        <url-pattern>/registroTipoInmueble</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>registroInmueble</servlet-name>
+        <servlet-class>servlet.registroInmueble</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>registroInmueble</servlet-name>
+        <url-pattern>/registroInmueble</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>registroSolicitudInmueble</servlet-name>
+        <servlet-class>servlet.registroSolicitudInmueble</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>registroSolicitudInmueble</servlet-name>
+        <url-pattern>/registroSolicitudInmueble</url-pattern>
+    </servlet-mapping>
+     <servlet>
+        <servlet-name>actualizarInmueble</servlet-name>
+        <servlet-class>servlet.actualizarInmueble</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>actualizarInmueble</servlet-name>
+        <url-pattern>/actualizarInmueble</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>listarInmueble</servlet-name>
+        <servlet-class>servlet.listarInmueble</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>listarInmueble</servlet-name>
+        <url-pattern>/listarInmueble</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>actualizarSolicitud</servlet-name>
+        <servlet-class>servlet.actualizarSolicitud</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>actualizarSolicitud</servlet-name>
+        <url-pattern>/actualizarSolicitud</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>listarSolicitud</servlet-name>
+        <servlet-class>servlet.listarSolicitud</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>listarSolicitud</servlet-name>
+        <url-pattern>/listarSolicitud</url-pattern>
+    </servlet-mapping>
+    
+    
+   <servlet>
+        <servlet-name>actualizarEstado</servlet-name>
+        <servlet-class>servlet.actualizarEstado</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>actualizarEstado</servlet-name>
+        <url-pattern>/actualizarEstado</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>listarEstado</servlet-name>
+        <servlet-class>servlet.listarEstado</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>listarEstado</servlet-name>
+        <url-pattern>/listarEstado</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>actualizarTipoInmueble</servlet-name>
+        <servlet-class>servlet.actualizarTipoInmueble</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>actualizarTipoInmueble</servlet-name>
+        <url-pattern>/actualizarTipoInmueble</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>listarTipoInmueble</servlet-name>
+        <servlet-class>servlet.TipoInmueble</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>listarTipoInmueble</servlet-name>
+        <url-pattern>/listarTipoInmueble</url-pattern>
+    </servlet-mapping>
+    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
