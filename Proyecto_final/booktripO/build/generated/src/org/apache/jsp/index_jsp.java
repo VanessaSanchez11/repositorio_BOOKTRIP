@@ -65,7 +65,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <h1 class=\"font-italic m-auto text-uppercase txt-title text-white \">Booktrip</h1>\n");
       out.write("            <form class=\"form-inline\">\n");
       out.write("                <a href=\"vista/Dashboard/usuario/add.jsp\" class=\"btn btn-outline-light mr-sm-4\">Registrarse</a>\n");
-      out.write("                <a href=\"vista/login.jsp\" class=\"btn btn-outline-light mr-sm-4\">Iniciar sesion</a>\n");
+      out.write("                <a href=\"vista/login.jsp\" class=\"btn btn-outline-light mr-sm-4\">Iniciar sesión</a>\n");
       out.write("                \n");
       out.write("            </form>\n");
       out.write("        </nav>\n");
@@ -139,7 +139,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <img class=\"card-img-top\" src=\"vista/imagenes/escalar.png\" alt=\"Card image cap\">\n");
       out.write("                <div class=\"card-body\">\n");
       out.write("                    <h5 class=\"card-title\">Escalar</h5>\n");
-      out.write("                    <p class=\"card-text\">Es una práctica deportiva que, en su modalidad cl?sica, consiste en subir o recorrer paredes de roca, laderas escarpadas u otros relieves naturales.</p>\n");
+      out.write("                    <p class=\"card-text\">Es una práctica deportiva que, en su modalidad clásica, consiste en subir o recorrer paredes de roca, laderas escarpadas u otros relieves naturales.</p>\n");
       out.write("                    <a href=\"#\" class=\"btn btn-primary\">Ir a la actividad</a>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
@@ -155,7 +155,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <img class=\"card-img-top\" src=\"vista/imagenes/rafting.jpeg\" alt=\"Card image cap\">\n");
       out.write("                <div class=\"card-body\">\n");
       out.write("                    <h5 class=\"card-title\">Rafting</h5>\n");
-      out.write("                    <p class=\"card-text\">Es una actividad deportiva y recreativa que consiste en recorrer el r?o en la direcci?n de la corriente (r?o abajo)</p>\n");
+      out.write("                    <p class=\"card-text\">Es una actividad deportiva y recreativa que consiste en recorrer el río en la dirección de la corriente (río abajo)</p>\n");
       out.write("                    <a href=\"#\" class=\"btn btn-primary\">Ir a la actividad</a>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
@@ -179,7 +179,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <img class=\"card-img-top\" src=\"vista/imagenes/billar.jpg\" alt=\"Card image cap\">\n");
       out.write("                <div class=\"card-body\">\n");
       out.write("                    <h5 class=\"card-title\">Billar</h5>\n");
-      out.write("                    <p class=\"card-text\">Es un deporte de precisi?n que se practica impulsando con un taco un n?mero variable de bolas .</p>\n");
+      out.write("                    <p class=\"card-text\">Es un deporte de precisión que se practica impulsando con un taco un n?mero variable de bolas .</p>\n");
       out.write("                    <a href=\"#\" class=\"btn btn-primary\">Ir a la actividad</a>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");

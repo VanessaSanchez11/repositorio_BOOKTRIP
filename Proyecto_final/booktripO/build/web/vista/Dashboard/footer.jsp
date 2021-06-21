@@ -82,13 +82,16 @@
     <script src="http://webapplayers.com/inspinia_admin-v2.9.4/js/plugins/pace/pace.min.js"></script>
 
     <!-- Page-Level Scripts -->
-    <script>
+   <script>
 
         // Upgrade button class name
         $.fn.dataTable.Buttons.defaults.dom.button.className = 'btn btn-white btn-sm';
 
         $(document).ready(function(){
             $('.dataTables-example').DataTable({
+                "language": {
+      "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+    },
                 pageLength: 25,
                 responsive: true,
                 dom: '<"html5buttons"B>lTfgitp',
@@ -115,7 +118,6 @@
         });
 
     </script>
-
 	
 </body>
 

@@ -54,6 +54,7 @@
                                                     ArrayList<tipoDocumentos> listaU = UDAO.ConsultarListadoTipos("");
                                                 %> 
                                                 <select name="txtTipoDocumento" class="form-control Combobox">
+                                                      <option value="">--selecione-- </option>
                                                     <%
                                                         for (tipoDocumentos i : listaU) {%>
                                                     <option value="<%=i.getIdTipoDocumento()%>"><%=i.getNombre()%> </option>
@@ -110,7 +111,7 @@
                                     </div>
                                     <div>  
                                         <input type="submit" name="accion" class="btn btn-success btn-user btn-block" value="Guardar" class="btn-primary btn-block">
-                                        <a href="../../../index.jsp"> <input type="submit" name="accion" class="btn btn-danger btn-user btn-block" value="Regresar" class="btn-danger btn-block"></a>
+                                        <input type="submit" name="accion" class="btn btn-danger btn-user btn-block" value="Regresar al index" class="btn-danger btn-block">
                                     </div>
                                 </form>
                                                  <hr>
