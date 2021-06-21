@@ -113,6 +113,12 @@ public class controllerUsuario extends HttpServlet {
                     out.println("window.location.href='/booktripO/vista/Dashboard/indexListaUsuarios.jsp';");
                     out.println("</script>");
                 break;
+                case "Regresar al index":
+                
+               out.println("<script type=\"text/javascript\">");
+                    out.println("window.location.href='/booktripO/index.jsp';");
+                    out.println("</script>");
+                break;
             default:
                    out.println("<script type=\"text/javascript\">");
                     out.println("window.location.href='/booktripO/vista/Dashboard/indexListaUsuarios.jsp';");
