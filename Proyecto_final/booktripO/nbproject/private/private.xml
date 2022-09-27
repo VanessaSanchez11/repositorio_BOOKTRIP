@@ -12,16 +12,11 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Java/booktripO/src/java/servlet/controllerMunicipio.java</file>
-            <file>file:/D:/Java/booktripO/web/vista/Dashboard/listaMunicipio.jsp</file>
-            <file>file:/D:/Java/booktripO/web/vista/Dashboard/indexListaMunicipio.jsp</file>
-            <file>file:/D:/Java/booktripO/web/index.jsp</file>
-            <file>file:/D:/Java/booktripO/web/vista/evaluar_sesion.jsp</file>
-            <file>file:/D:/Java/booktripO/web/vista/Dashboard/footer.jsp</file>
-            <file>file:/D:/Java/booktripO/web/vista/Propietario/footer.jsp</file>
-            <file>file:/D:/Java/booktripO/web/vista/Dashboard/indexListaUsuarios.jsp</file>
-            <file>file:/D:/Java/booktripO/web/vista/Dashboard/usuario/add.jsp</file>
-            <file>file:/D:/Java/booktripO/web/vista/login.jsp</file>
+            <file>file:/C:/Users/Oscar/Documents/GitHub/repositorio_BOOKTRIP/Proyecto_final/booktripO/web/index.jsp</file>
+            <file>file:/C:/Users/Oscar/Documents/GitHub/repositorio_BOOKTRIP/Proyecto_final/booktripO/web/vista/Dashboard/css/estilosBooktrip.css</file>
+            <file>file:/C:/Users/Oscar/Documents/GitHub/repositorio_BOOKTRIP/Proyecto_final/booktripO/src/java/servlet/controllerEstado.java</file>
+            <file>file:/C:/Users/Oscar/Documents/GitHub/repositorio_BOOKTRIP/Proyecto_final/booktripO/web/vista/Dashboard/js/validaciones.js</file>
+            <file>file:/C:/Users/Oscar/Documents/GitHub/repositorio_BOOKTRIP/Proyecto_final/booktripO/src/java/servlet/controllerInmueble.java</file>
         </group>
     </open-files>
 </project-private>

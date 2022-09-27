@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 
 <head>
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@
             <h1 class="font-italic m-auto text-uppercase txt-title text-white ">Booktrip</h1>
             <form class="form-inline">
                 <a href="vista/Dashboard/usuario/add.jsp" class="btn btn-outline-light mr-sm-4">Registrarse</a>
-                <a href="vista/login.jsp" class="btn btn-outline-light mr-sm-4">Iniciar sesión</a>
+                <a href="vista/login.jsp" class="btn btn-outline-light mr-sm-4">Iniciar sesiï¿½n</a>
                 
             </form>
         </nav>
@@ -82,7 +82,7 @@
 
         <section class="banner">
             <div class="contenedorTexto">
-                <h2>BOGOTÁ</h2>
+                <h2>BOGOTï¿½</h2>
                 <div class="btn">
                     <button type="button" class="btn btn-outline-dark">Ver Lugares</button>
                     <button type="button" class="btn btn-outline-dark">Reservar ahora</button>
@@ -96,7 +96,7 @@
                 <img class="card-img-top" src="vista/imagenes/escalar.png" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Escalar</h5>
-                    <p class="card-text">Es una práctica deportiva que, en su modalidad clásica, consiste en subir o recorrer paredes de roca, laderas escarpadas u otros relieves naturales.</p>
+                    <p class="card-text">Es una prï¿½ctica deportiva que, en su modalidad clï¿½sica, consiste en subir o recorrer paredes de roca, laderas escarpadas u otros relieves naturales.</p>
                     <a href="#" class="btn btn-primary">Ir a la actividad</a>
                 </div>
             </div>
@@ -112,7 +112,7 @@
                 <img class="card-img-top" src="vista/imagenes/rafting.jpeg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Rafting</h5>
-                    <p class="card-text">Es una actividad deportiva y recreativa que consiste en recorrer el río en la dirección de la corriente (río abajo)</p>
+                    <p class="card-text">Es una actividad deportiva y recreativa que consiste en recorrer el rï¿½o en la direcciï¿½n de la corriente (rï¿½o abajo)</p>
                     <a href="#" class="btn btn-primary">Ir a la actividad</a>
                 </div>
             </div>
@@ -136,7 +136,7 @@
                 <img class="card-img-top" src="vista/imagenes/billar.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Billar</h5>
-                    <p class="card-text">Es un deporte de precisión que se practica impulsando con un taco un n?mero variable de bolas .</p>
+                    <p class="card-text">Es un deporte de precisiï¿½n que se practica impulsando con un taco un n?mero variable de bolas .</p>
                     <a href="#" class="btn btn-primary">Ir a la actividad</a>
                 </div>
             </div>

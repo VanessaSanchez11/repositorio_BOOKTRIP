@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import modelo.estados;
 import modelo.tipoinmuebles;
 import static org.apache.taglibs.standard.tag.common.core.OutSupport.out;
-import static sun.misc.MessageUtils.out;
+//import static sun.misc.MessageUtils.out;
 
 /**
  *

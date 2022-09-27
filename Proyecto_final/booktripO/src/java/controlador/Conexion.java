@@ -11,7 +11,7 @@ import modelo.usuario;
 
 public class Conexion {
     private Connection conn;
-    private String driver = "com.mysql.cj.jdbc.Driver";
+    private String driver = "com.mysql.jdbc.Driver";
     private String user = "root";
     private String password = "";
     private String baseDatos = "booktripr";
